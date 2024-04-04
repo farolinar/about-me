@@ -1,4 +1,4 @@
-import BrightnessToggle from "../../components/BrightnessToggle/BrightnessToggle";
+import BrightnessToggle from "../../../components/BrightnessToggle/BrightnessToggle";
 import LinkedInLogo from "../../../assets/img/linkedin.png";
 import GithubLogo from "../../../assets/img/github.png";
 import HamburgerIcon from "../../../assets/img/hamburger.png";
