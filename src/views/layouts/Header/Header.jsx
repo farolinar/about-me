@@ -3,13 +3,14 @@ import LinkedInLogo from "../../../assets/img/linkedin.png";
 import GithubLogo from "../../../assets/img/github.png";
 import HamburgerIcon from "../../../assets/img/hamburger.png";
 import "./Header.css"
+import { toggleElementById } from "../../../utils/viewUtil";
 
 function HeaderLayout() {
     return (
         <>
             <div className="header-layout-outer">
                 <div className="header-layout">
-                    <div className="hamburger">
+                    <div className="hamburger" onClick={() => toggleElementById("side-menu")} >
                         <img src={HamburgerIcon} alt="hamburger" />
                     </div>
                     <div className="logo">
