@@ -1,0 +1,150 @@
+.header-layout-outer .logo p {
+    font-family: "Workbench", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "BLED" 0,
+        "SCAN" 0;
+    color: var(--logo-shade-one);
+    background: -webkit-linear-gradient(var(--logo-shade-one), var(--logo-shade-two));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+    margin: 0;
+    font-size: 29px;
+
+    /* overflow: hidden;
+    border-right: .15em solid var(--theme-shade-one);
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+        typing 0.8s steps(13, end),
+        blink-caret .75s step-end infinite; */
+}
+
+.header-layout-outer .logo img {
+    height: 32px;
+}
+
+.header-layout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-layout .icons {
+    display: flex;
+    gap: 15px;
+}
+
+.header-layout .icons .icon {
+    /* align-self: flex-end; */
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    width: 32px;
+    height: 32px;
+}
+
+.header-layout .icons .icon img {
+    /* height: 100%; */
+    width: 100%;
+    object-fit: cover;
+}
+
+.header-layout {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header-layout .hamburger img {
+    height: 28px;
+    align-self: flex-end;
+}
+
+.header-layout .logo {
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+}
+
+.header-layout .menu {
+    display: flex;
+    gap: 40px;
+}
+
+.header-layout .menu p {
+    margin: auto 0;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+.hamburger {
+    display: none;
+}
+
+.header-layout .logo img {
+    margin-right: 15px;
+}
+
+/* minimum iPads (portrait and landscape)  */
+@media only screen and (max-device-width: 1024px) {
+
+    .header-layout {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .header-layout .hamburger {
+        display: block;
+    }
+    
+    .header-layout-outer .logo img {
+        display: none;
+    }
+
+    .header-layout-outer .logo p {
+        font-size: 32px;
+    }
+    
+    .header-layout .menu {
+        display: none;
+    }
+
+    .header-layout .icons .icon {
+        display: none;
+    }
+}
+
+/* iPads (portrait and landscape)  */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    
+}
+
+/* Smartphones (portrait) */
+@media only screen and (max-width: 767px) {
+    .header-layout .hamburger img {
+        height: 26px;
+    }
+
+    .header-layout-outer .logo p {
+        font-size: 30px;
+    }
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--theme-shade-one); }
+}

@@ -1,68 +1,67 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* :root, */
+:root.light {
+  --theme-shade-four: #CDFFFC;
+  --theme-shade-three: #FFC764;
+  --theme-shade-two: #FF577F;
+  --theme-shade-one: #FF884B;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --theme-text-main: #282D4F;
+  --theme-text-secondary: #FF884B;
+  --theme-text-color: #FF577F;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --logo-shade-one: rgba(134,211,255);
+  --logo-shade-two: rgba(229,132,252,1);
 }
+:root,
+:root.dark {
+  --theme-shade-four: #23103A;
+  --theme-shade-three: #282D4F;
+  --theme-shade-two: #A0204C;
+  --theme-shade-one: #FF6C00;
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+  --theme-text-main: #CDFFFC;
+  --theme-text-secondary: #FF6C00;
+  --theme-text-color: #A0204C;
+
+  --logo-shade-one: rgba(134,211,255);
+  --logo-shade-two: rgba(229,132,252,1);
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: var(--theme-text-main);
+  background-color: var(--theme-shade-four);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1, h2 {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+h3, h4, h5 {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+p {
+  font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }

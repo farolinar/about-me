@@ -1,0 +1,22 @@
+.brightness-toggle {
+    width: 32px;
+    height: 32px;
+    padding: 0.5em;
+    border-radius: 50%;
+    border: none;
+    background-color: transparent;
+}
+
+.brightness-toggle img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Smartphones (portrait) */
+@media only screen and (max-width: 767px) {
+    .brightness-toggle {
+        width: 30px;
+        height: 30px;
+    }
+}

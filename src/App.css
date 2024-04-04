@@ -1,42 +1,71 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
   text-align: center;
+  position: relative;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-@keyframes logo-spin {
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.clickable-text {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.clickable-text:hover {
+  font-weight: 600;
+  color: var(--logo-shade-one);
+  background: -webkit-linear-gradient(var(--logo-shade-one), var(--logo-shade-two));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+button {
+  background: rgb(134,211,255);
+  background: linear-gradient(90deg, rgba(134,211,255,1) 0%, rgba(229,132,252,1) 70%);
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background: rgb(134,211,255);
+  background: linear-gradient(45deg, rgba(134,211,255,1) 0%, rgba(229,132,252,1) 50%);
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.no-background {
+  background: transparent !important;
+}
+
+
+@keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
