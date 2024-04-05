@@ -1,0 +1,15 @@
+.header-menu-list {
+    display: flex;
+    gap: 40px;
+}
+
+.header-menu-list p {
+    margin: auto 0;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+/* minimum iPads (portrait and landscape)  */
+@media only screen and (max-device-width: 1024px) {
+    
+}

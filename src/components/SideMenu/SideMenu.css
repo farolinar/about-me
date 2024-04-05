@@ -1,33 +1,47 @@
 .side-menu-outer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(35% - 40px);
+    max-height: 0;
     background: var(--theme-shade-four);
-    height: 100vh;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    padding: 20px;
+    padding: 0 20px;
     text-align: left;
+    overflow: hidden;
+    -webkit-transition: 0.5s; 
+    -moz-transition: 0.5s; 
+    -ms-transition: 0.5s; 
+    -o-transition: 0.5s; 
+    transition: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.side-menu-outer.shown {
+    max-height: 45vh;
+    padding: 0 20px 20px 20px;
+    transition-timing-function: ease-out;
 }
 
 .side-menu .close-btn img {
-    height: 20px;
+    height: 30px;
+}
+
+.side-menu .header-icons {
+    padding-bottom: 15px;
+}
+
+.side-menu .header-menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px 0 15px 0;
 }
 
 /* minimum iPads (portrait and landscape)  */
 @media only screen and (max-device-width: 1024px) {
-    .side-menu-outer {
-        width: calc(50% - 40px);
-    }
+    
 }
 
 /* Smartphones (portrait) */
 @media only screen and (max-width: 767px) {
-    .side-menu-outer {
-        width: calc(75% - 40px);
-    }
-
     .side-menu .close-btn img {
-        height: 17px;
+        height: 25px;
     }
 }

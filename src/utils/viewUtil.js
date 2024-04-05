@@ -1,10 +1,19 @@
 const toggleElementById = (id) => {
-  var x = document.getElementById(id);
-  if (x.style.display == "block") {
-    x.style.display = "none";
+  var element = document.getElementById(id);
+  if (element.style.display == "block") {
+    element.style.display = "none";
   } else {
-    x.style.display = "block";
+    element.style.display = "block";
   }
 }
 
-export { toggleElementById }
+const showSideMenu = () => {
+  var element = document.getElementById("side-menu");
+  if (element.classList.contains("shown")) {
+    element.classList.remove("shown");
+  } else {
+    element.classList.add("shown");
+  }
+}
+
+export { toggleElementById, showSideMenu }

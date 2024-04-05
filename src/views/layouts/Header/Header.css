@@ -1,4 +1,10 @@
 .header-layout-outer .logo p {
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+
     font-family: "Workbench", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -33,26 +39,6 @@
     justify-content: space-between;
 }
 
-.header-layout .icons {
-    display: flex;
-    gap: 15px;
-}
-
-.header-layout .icons .icon {
-    /* align-self: flex-end; */
-    cursor: pointer;
-    border-radius: 50%;
-    border: none;
-    width: 32px;
-    height: 32px;
-}
-
-.header-layout .icons .icon img {
-    /* height: 100%; */
-    width: 100%;
-    object-fit: cover;
-}
-
 .header-layout {
     padding-left: 20px;
     padding-right: 20px;
@@ -69,17 +55,6 @@
     text-align: left;
     display: flex;
     align-items: flex-end;
-}
-
-.header-layout .menu {
-    display: flex;
-    gap: 40px;
-}
-
-.header-layout .menu p {
-    margin: auto 0;
-    font-size: 16px;
-    letter-spacing: 0.5px;
 }
 
 .hamburger {
@@ -111,12 +86,12 @@
     .header-layout-outer .logo p {
         font-size: 32px;
     }
-    
-    .header-layout .menu {
+
+    .header-layout .header-icons .icon {
         display: none;
     }
 
-    .header-layout .icons .icon {
+    .header-layout .header-menu-list {
         display: none;
     }
 }
