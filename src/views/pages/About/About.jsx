@@ -1,3 +1,4 @@
+import BlinkingComponent from "../../../components/BlinkingComponent/BlinkingComponent";
 import Page from "../../layouts/Page/Page";
 import "./About.css";
 
@@ -7,7 +8,12 @@ function About() {
       <Page>
         <div className="about-outer">
           <div className="section text">
-            <div className="title headline">Greetings,</div>
+            <div className="title headline">
+              <BlinkingComponent display="inline-block">
+                <div className="text-prompt">&gt;&nbsp;</div>
+              </BlinkingComponent>
+              Greetings,
+            </div>
             <div className="title headline">
               My name is Farolina Rahmatunnisa
             </div>

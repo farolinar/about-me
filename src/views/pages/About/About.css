@@ -24,4 +24,9 @@
 .page .about-outer .section.text .content {
     margin-top: 40px;
     color: var(--theme-text-secondary);
+}
+
+ /* components */
+ .page .about-outer .text-prompt {
+    color: var(--theme-text-secondary);
  }

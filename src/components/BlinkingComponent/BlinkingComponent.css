@@ -1,0 +1,9 @@
+.blinking-component {
+    animation: 
+        blinking 1s step-end infinite;
+}
+
+@keyframes blinking {
+    from, to { visibility: hidden }
+    50% { visibility: visible; }
+}
