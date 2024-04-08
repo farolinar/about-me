@@ -1,7 +1,7 @@
 import BlinkingComponent from "../../../components/BlinkingComponent/BlinkingComponent";
-import TypingComponent from "../../../components/TypingComponent/TypingComponent";
+import Typewriter from "../../../components/Typewriter/Typewriter";
 import Page from "../../layouts/Page/Page";
-import "./About.css";
+import "./About-min.css";
 
 function About() {
   return (
@@ -13,10 +13,16 @@ function About() {
               <BlinkingComponent>
                   <div className="text-prompt">&gt;&nbsp;</div>
               </BlinkingComponent>
-              <div>Greetings,</div>
+              <div>
+                Greetings,
+              </div>
             </div>
             <div className="headline">
               My name is Farolina Rahmatunnisa
+            </div>
+            <div className="introduction">
+              I am a <Typewriter dataTypes={[ "Back End Developer", "Front End Developer", "Full Stack Developer", "Programmer", "Student", "Gamer" ]}/>
+              {/* <Typewriter dataTypes={[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]}/> */}
             </div>
             <div className="content">
               <p>

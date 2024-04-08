@@ -10,10 +10,7 @@
 
 .about-outer .section.text .headline {
     display: flex;
-    font-family: "Source Code Pro", monospace;
-    font-optical-sizing: auto;
     font-weight: 700;
-    font-style: normal;
     font-size: 2em;
     color: var(--theme-text-color);
 
@@ -21,8 +18,18 @@
     font-size: 2.5em;
 }
 
+.about-outer .section.text .introduction {
+    font-weight: 700;
+    font-size: 1.8em;
+
+    color: var(--theme-text-main);
+    
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
 .about-outer .section.text .content {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     color: var(--theme-text-secondary);
 }
 

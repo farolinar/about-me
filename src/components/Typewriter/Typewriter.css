@@ -1,0 +1,12 @@
+.typing-component {
+    display: inline-block;
+}
+
+.typing-component a {
+    text-decoration: none;
+    color: var(--theme-text-color);
+}
+
+.typing-component .typewrite > .wrap {
+    border-right: 0.08em solid var(--theme-text-main);
+}
