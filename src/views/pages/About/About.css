@@ -11,7 +11,6 @@
 .about-outer .section.text .headline {
     display: flex;
     font-weight: 700;
-    font-size: 2em;
     color: var(--theme-text-color);
 
     text-align: left;
@@ -38,3 +37,67 @@
  .about-outer .text-prompt {
     color: var(--theme-text-secondary);
  }
+
+ /* minimum iPads (portrait and landscape)  */
+@media only screen and (max-device-width: 1024px) {
+    .about-outer {
+        flex-direction: column;
+    }
+
+    .about-outer .section {
+        width: 100%;
+    }
+
+    .about-outer .section.text .headline {
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .about-outer .section.text .headline.greeting {
+        /* font-size: 2em; */
+    }
+
+    .about-outer .section.text .headline.my-name {
+        font-size: 2em;
+    }
+
+    .about-outer .section.text .headline.greeting span {
+        display: none;
+    }
+
+    .about-outer .section.text .introduction {
+        font-size: 1.6em;
+        text-align: center;
+    }
+
+    .about-outer .section.text .content {
+        /* margin-top: 40px; */
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+/* iPads (portrait and landscape)  */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    
+}
+
+/* Smartphones (portrait) */
+@media only screen and (max-width: 767px) {
+    .about-outer .section.text .headline.greeting {
+        font-size: 2em;
+    }
+
+    .about-outer .section.text .headline.my-name {
+        font-size: 1.9em;
+    }
+
+    .about-outer .section.text .content {
+        font-size: 16px;
+    }
+
+    .about-outer .section.text .introduction {
+        font-size: 1.2em;
+    }
+}

@@ -9,13 +9,13 @@ function About() {
       <Page>
         <div className="about-outer">
           <div className="section text">
-            <div className="headline">
+            <div className="headline greeting">
               <BlinkingComponent>
                 <div className="text-prompt">&gt;&nbsp;</div>
               </BlinkingComponent>
-              <div>Greetings,</div>
+              <div>Greetings<span>,</span></div>
             </div>
-            <div className="headline">My name is Farolina Rahmatunnisa</div>
+            <div className="headline my-name">My name is Farolina Rahmatunnisa</div>
             <div className="introduction">
               I am a{" "}
               <Typewriter
