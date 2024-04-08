@@ -1,22 +1,29 @@
-.side-menu-outer {
-    max-height: 0;
+.side-menu {
+    /* position: absolute; */
+    /* width: 100%; */
+    /* max-height: 0; */
     background: var(--theme-shade-four);
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
     padding: 0 20px;
     text-align: left;
     overflow: hidden;
-    -webkit-transition: 0.5s; 
+    height: 0;
+    /* -webkit-transition: 0.5s; 
     -moz-transition: 0.5s; 
     -ms-transition: 0.5s; 
     -o-transition: 0.5s; 
     transition: 0.5s;
-    transition-timing-function: ease-in;
+    transition-timing-function: ease-in; */
+    /* transform: scale(1, 1); */
+    transition:height 0.3s ease-in-out;
+    transition-delay: 0.1s;
 }
 
-.side-menu-outer.shown {
-    max-height: 45vh;
+.side-menu.shown {
+    /* max-height: 50vh; */
+    height: 200px;
     padding: 0 20px 20px 20px;
-    transition-timing-function: ease-out;
+    /* transition-timing-function: ease-out; */
 }
 
 .side-menu .close-btn img {
