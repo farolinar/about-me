@@ -1,3 +1,10 @@
+.header-layout-outer {
+    position: sticky;
+    top: 0px;
+    z-index: 10;
+    background-color: var(--theme-shade-four);
+}
+
 .header-layout-outer .logo p {
     user-select: none;
     -moz-user-select: none;
