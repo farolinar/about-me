@@ -11,32 +11,37 @@ function About() {
           <div className="section text">
             <div className="headline">
               <BlinkingComponent>
-                  <div className="text-prompt">&gt;&nbsp;</div>
+                <div className="text-prompt">&gt;&nbsp;</div>
               </BlinkingComponent>
-              <div>
-                Greetings,
-              </div>
+              <div>Greetings,</div>
             </div>
-            <div className="headline">
-              My name is Farolina Rahmatunnisa
-            </div>
+            <div className="headline">My name is Farolina Rahmatunnisa</div>
             <div className="introduction">
-              I am a <Typewriter dataTypes={[ "Back End Developer", "Front End Developer", "Full Stack Developer", "Programmer", "Student", "Gamer" ]}/>
+              I am a{" "}
+              <Typewriter
+                dataTypes={[
+                  "Back End Developer",
+                  "Front End Developer",
+                  "Full Stack Developer",
+                  "Software Engineer",
+                  "Programmer",
+                  "Student",
+                  "Gamer",
+                ]}
+              />
               {/* <Typewriter dataTypes={[ "Hi, Im Si.", "I am Creative.", "I Love Design.", "I Love to Develop." ]}/> */}
             </div>
             <div className="content">
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Maecenas sit amet aliquam orci, ac porta dolor. Curabitur nibh
-                velit, volutpat ut turpis vel, convallis venenatis nisi. Cras
-                lacinia rhoncus molestie. Nam eget urna convallis, tincidunt
-                nulla ac, sagittis ex.
+                Software Engineer fueled by curiosity and a passion for
+                knowledge, with a solid educational foundation from the
+                University of Indonesia. Committed to pushing boundaries in
+                technology, I thrive on challenges and am always eager to deepen
+                my understanding of the ever-evolving landscape of software
+                engineering.
               </p>
-              <p>
-                Nulla elementum, nibh ut placerat varius, massa turpis varius
-                nulla, id bibendum neque felis at nulla. Cras tristique purus
-                magna, id faucibus tellus facilisis sed. Nam a felis sem.
-              </p>
+
+              <p>Let's code the future together.</p>
             </div>
           </div>
           <div className="section visual"></div>

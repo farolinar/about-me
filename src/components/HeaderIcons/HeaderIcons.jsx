@@ -8,10 +8,14 @@ function HeaderIcons({ brightnessToggleVisible = true }) {
         <>
             <div className="header-icons">
                 <button className="icon">
-                    <img src={GithubLogo} alt="github" />
+                    <a href="https://github.com/farolinar" target="_blank">
+                        <img src={GithubLogo} alt="github" />
+                    </a>
                 </button>
                 <button className="icon linkedin">
-                    <img src={LinkedInLogo} alt="linkedin" />
+                    <a href="https://www.linkedin.com/in/farolina-r/" target="_blank">
+                        <img src={LinkedInLogo} alt="linkedin" />
+                    </a>
                 </button>
                 { brightnessToggleVisible ? <BrightnessToggle /> : "" }
             </div>

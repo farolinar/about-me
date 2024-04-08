@@ -31,6 +31,7 @@
 .about-outer .section.text .content {
     /* margin-top: 40px; */
     color: var(--theme-text-secondary);
+    font-size: 20px;
 }
 
  /* components */
