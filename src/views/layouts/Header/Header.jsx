@@ -1,4 +1,4 @@
-import "./Header.css"
+import "./Header-min.css"
 import HamburgerIcon from "../../../assets/img/hamburger.png";
 import HeaderIcons from "../../../components/HeaderIcons/HeaderIcons";
 import { showSideMenu } from "../../../utils/viewUtil";

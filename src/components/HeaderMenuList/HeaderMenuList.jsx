@@ -1,4 +1,4 @@
-import "./HeaderMenuList.css"
+import "./HeaderMenuList-min.css"
 
 function HeaderMenuList() {
     return(

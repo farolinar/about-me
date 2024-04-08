@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import './App.css';
+import './App-min.css';
 import HeaderLayout from './views/layouts/Header/Header';
-import PageHome from './views/pages/Home';
 import SideMenu from './components/SideMenu/SideMenu';
 import { useSelector } from 'react-redux';
+import About from './views/pages/About/About';
 
 function App() {
   const theme = useSelector(state => state.theme.themeState);
@@ -17,7 +17,7 @@ function App() {
       <div className="App">
         <HeaderLayout />
         <SideMenu />
-        <PageHome />
+        <About />
       </div>
     </>
   );

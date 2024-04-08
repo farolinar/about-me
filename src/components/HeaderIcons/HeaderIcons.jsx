@@ -1,4 +1,4 @@
-import "./HeaderIcons.css"
+import "./HeaderIcons-min.css"
 import BrightnessToggle from "../BrightnessToggle/BrightnessToggle"
 import LinkedInLogo from "../../assets/img/linkedin.png";
 import GithubLogo from "../../assets/img/github.png";

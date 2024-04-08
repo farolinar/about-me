@@ -1,4 +1,4 @@
-import "./BrightnessToggle.css"
+import "./BrightnessToggle-min.css"
 import Moon from "../../assets/img/moon.png"
 import Sun from "../../assets/img/sun.png"
 import { useDispatch, useSelector } from "react-redux"

@@ -1,4 +1,4 @@
-import "./SideMenu.css"
+import "./SideMenu-min.css"
 import HeaderIcons from "../HeaderIcons/HeaderIcons";
 import HeaderMenuList from "../HeaderMenuList/HeaderMenuList";
 
