@@ -1,14 +1,15 @@
-.page .about-outer {
+.about-outer {
     display: flex;
     max-width: 1100px;
 }
 
-.page .about-outer .section {
+.about-outer .section {
     width: 50%;
     /* padding-top: 5vh; */
 }
 
-.page .about-outer .section.text .headline {
+.about-outer .section.text .headline {
+    display: flex;
     font-family: "Source Code Pro", monospace;
     font-optical-sizing: auto;
     font-weight: 700;
@@ -18,15 +19,14 @@
 
     text-align: left;
     font-size: 2.5em;
-    width: 100%;
 }
 
-.page .about-outer .section.text .content {
+.about-outer .section.text .content {
     margin-top: 40px;
     color: var(--theme-text-secondary);
 }
 
  /* components */
- .page .about-outer .text-prompt {
+ .about-outer .text-prompt {
     color: var(--theme-text-secondary);
  }

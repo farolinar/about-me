@@ -1,4 +1,5 @@
 import BlinkingComponent from "../../../components/BlinkingComponent/BlinkingComponent";
+import TypingComponent from "../../../components/TypingComponent/TypingComponent";
 import Page from "../../layouts/Page/Page";
 import "./About.css";
 
@@ -8,13 +9,13 @@ function About() {
       <Page>
         <div className="about-outer">
           <div className="section text">
-            <div className="title headline">
-              <BlinkingComponent display="inline-block">
-                <div className="text-prompt">&gt;&nbsp;</div>
+            <div className="headline">
+              <BlinkingComponent>
+                  <div className="text-prompt">&gt;&nbsp;</div>
               </BlinkingComponent>
-              Greetings,
+              <div>Greetings,</div>
             </div>
-            <div className="title headline">
+            <div className="headline">
               My name is Farolina Rahmatunnisa
             </div>
             <div className="content">
