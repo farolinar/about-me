@@ -4,6 +4,7 @@ import HeaderLayout from './views/layouts/Header/Header';
 import SideMenu from './components/SideMenu/SideMenu';
 import { useSelector } from 'react-redux';
 import About from './views/pages/About/About';
+import Blogs from './views/pages/Blogs/Blogs';
 
 function App() {
   const theme = useSelector(state => state.theme.themeState);
@@ -17,7 +18,8 @@ function App() {
       <div className="App">
         <HeaderLayout />
         <SideMenu />
-        <About />
+        <About pageScheme='four' />
+        <Blogs pageScheme='three' />
       </div>
     </>
   );

@@ -2,7 +2,7 @@
     position: sticky;
     top: 0px;
     z-index: 10;
-    background-color: var(--theme-shade-four);
+    background-color: var(--theme-scheme-four);
 }
 
 .header-layout-outer .logo p {
@@ -29,7 +29,7 @@
     font-size: 29px;
 
     /* overflow: hidden;
-    border-right: .15em solid var(--theme-shade-one);
+    border-right: .15em solid var(--theme-color-one);
     white-space: nowrap;
     margin: 0 auto;
     animation: 
@@ -120,13 +120,13 @@
 }
 
 /* The typing effect */
-@keyframes typing {
+/* @keyframes typing {
     from { width: 0 }
     to { width: 100% }
-  }
+  } */
   
 /* The typewriter cursor effect */
-@keyframes blink-caret {
+/* @keyframes blink-caret {
     from, to { border-color: transparent }
-    50% { border-color: var(--theme-shade-one); }
-}
+    50% { border-color: var(--theme-color-one); }
+} */

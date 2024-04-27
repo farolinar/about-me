@@ -1,0 +1,5 @@
+.blog-outer {
+    h2 {
+        color: var(--theme-text-main);
+    }
+}
