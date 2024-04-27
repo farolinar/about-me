@@ -1,9 +1,9 @@
-import "./Page-min.css"
+import "./Page.min.css"
 
-function Page({ children }) {
+function Page({ children, scheme="dark" }) {
     return(
         <>
-            <div className="page">
+            <div className={"page " + scheme}>
                 {children}
             </div>
         </>

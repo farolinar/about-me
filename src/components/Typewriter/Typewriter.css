@@ -4,11 +4,11 @@
 
 .typing-component a {
     text-decoration: none;
-    color: var(--theme-text-color);
+    color: var(--theme-text-main);
 }
 
 .typing-component .typewrite > .wrap {
-    border-right: 0.08em solid var(--theme-text-main);
+    border-right: 0.08em solid var(--theme-text-primary);
     animation: caret 1s steps(1) infinite;
 }
 

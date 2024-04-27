@@ -11,7 +11,7 @@
 .about-outer .section.text .headline {
     display: flex;
     font-weight: 700;
-    color: var(--theme-text-color);
+    color: var(--theme-text-main);
 
     text-align: left;
     font-size: 2.5em;
@@ -21,7 +21,7 @@
     font-weight: 700;
     font-size: 1.8em;
 
-    color: var(--theme-text-main);
+    color: var(--theme-text-primary);
     
     margin-top: 10px;
     margin-bottom: 40px;

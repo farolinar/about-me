@@ -3,10 +3,10 @@ import Typewriter from "../../../components/Typewriter/Typewriter";
 import Page from "../../layouts/Page/Page";
 import "./About-min.css";
 
-function About() {
+function About({ pageScheme="four" }) {
   return (
     <>
-      <Page>
+      <Page scheme={pageScheme}>
         <div className="about-outer">
           <div className="section text">
             <div className="headline greeting">

@@ -68,11 +68,11 @@ function Typewriter({ dataTypes = [] }) {
       <div className="typing-component">
         <a
           href=""
-          class="typewrite"
+          className="typewrite"
           data-period="2000"
           data-type={JSON.stringify(dataTypes)}
         >
-          <span class="wrap"></span>
+          <span className="wrap"></span>
         </a>
       </div>
     </>

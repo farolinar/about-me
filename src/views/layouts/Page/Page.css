@@ -7,6 +7,14 @@
     padding-left: 30px;
 }
 
+.page.four {
+    background-color: var(--theme-scheme-four);
+}
+
+.page.three {
+    background-color: var(--theme-scheme-three);
+}
+
  /* minimum iPads (portrait and landscape)  */
  @media only screen and (max-device-width: 1024px) {
     .page {
