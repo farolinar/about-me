@@ -6,7 +6,7 @@ import "./About-min.css";
 function About() {
   return (
     <>
-      <Page>
+      <Page main={true}>
         <div className="about-outer">
           <div className="section text">
             <div className="headline greeting">

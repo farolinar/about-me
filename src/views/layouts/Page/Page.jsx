@@ -1,9 +1,9 @@
-import "./Page-min.css"
+import "./Page.min.css"
 
-function Page({ children }) {
+function Page({ children, main = false }) {
     return(
         <>
-            <div className="page">
+            <div className={`page ${main ? "main": ""}`}>
                 {children}
             </div>
         </>
