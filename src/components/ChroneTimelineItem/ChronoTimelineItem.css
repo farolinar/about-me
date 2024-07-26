@@ -1,0 +1,10 @@
+.chrono-timeline-item {
+    
+}
+
+/* Smartphones (portrait) */
+@media only screen and (max-width: 767px) {
+    .chrono-timeline-item::before{
+        display: none;
+    }
+}

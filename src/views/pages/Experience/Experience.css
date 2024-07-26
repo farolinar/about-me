@@ -1,0 +1,7 @@
+.experience-outer {
+    
+    h1 {
+        color: var(--theme-text-color);
+        text-align: center;
+    }
+}
