@@ -6,6 +6,19 @@
     -moz-osx-font-smoothing: grayscale;
     width: 500px;
 
+    -ms-transform: translateY(100%); /* IE 9 */
+    -webkit-transform: translateY(100%); /* Safari */
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.4s;
+
+    &.slide-in{
+        -ms-transform: translateY(0); /* IE 9 */
+        -webkit-transform: translateY(0); /* Safari */
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+    }
+
     * {
         font-family: "Source Code Pro", monospace;
         font-style: normal;

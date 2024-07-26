@@ -1,8 +1,8 @@
 import { Chip, Grid } from "@mui/material";
 import "./ExperienceCard.css"
 
-function ExperienceCard({data}) {
-    return <div className="experience-card-outer">
+function ExperienceCard({data, ref}) {
+    return <div className="experience-card-outer" ref={ref}>
         <div className="head">
             <div className="image">
                 <img src={data.img} alt={data.place} />
