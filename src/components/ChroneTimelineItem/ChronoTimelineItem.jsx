@@ -1,8 +1,9 @@
 import { TimelineConnector, TimelineContent, TimelineDot, TimelineItem, TimelineSeparator } from "@mui/lab";
 import ExperienceCard from "../ExperienceCard/ExperienceCard";
-import "./ChronoTimelineItem.css"
+import "./ChronoTimelineItem.min.css"
 import { useInView } from "react-intersection-observer";
 import { useEffect, useRef } from "react";
+import IntersectionObserverItem from "../IntersectionObserverItem/IntersectionObserverItem";
 
 function ChronoTimelineItem({ children, type, data, index, lastItem = false }) {
     const expCardRef = useRef()
@@ -16,21 +17,12 @@ function ChronoTimelineItem({ children, type, data, index, lastItem = false }) {
         }
     }
 
-    const { ref, inView, entry } = useInView({
-        rootMargin: "-300px",
-      });
-  
-    useEffect(() => {
-        if (expCardRef.current !== undefined) {
-            if (inView) {
-                console.log(inView)
-                console.log(expCardRef)
-                expCardRef.current.querySelector(".experience-card-outer").classList.add("slide-in");
-            }
-        }
-    }, [inView, expCardRef])
-
-    return <TimelineItem className="chrono-timeline-item" ref={ref} key={`timeline-item- ${type}-${index}`}>
+    return <IntersectionObserverItem 
+            func = {() => {expCardRef.current.querySelector(".experience-card-outer").classList.add("slide-in");}}
+            rootMargin="-300px"
+            childRef={expCardRef}
+        >
+        <TimelineItem className="chrono-timeline-item" key={`timeline-item- ${type}-${index}`}>
         <TimelineSeparator>
             <TimelineDot variant="outlined" />
             {lastItem ? "" : <TimelineConnector />}
@@ -39,6 +31,7 @@ function ChronoTimelineItem({ children, type, data, index, lastItem = false }) {
             { returnContentType() }
         </TimelineContent>
     </TimelineItem>
+    </IntersectionObserverItem>
 }
 
 export default ChronoTimelineItem;

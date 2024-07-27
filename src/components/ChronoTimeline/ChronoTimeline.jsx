@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import "./ChronoTimeline.css"
+import "./ChronoTimeline.min.css"
 import Timeline from '@mui/lab/Timeline'
 
 function ChronoTimeline({ children }) {
