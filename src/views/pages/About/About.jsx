@@ -1,13 +1,13 @@
 import BlinkingComponent from "../../../components/BlinkingComponent/BlinkingComponent";
 import Typewriter from "../../../components/Typewriter/Typewriter";
 import Page from "../../layouts/Page/Page";
-import "./About-min.css";
+import "./About.min.css";
 
-function About() {
+function About({thisRef}) {
   return (
     <>
       <Page main={true}>
-        <div className="about-outer">
+        <div className="about-outer" ref={thisRef}>
           <div className="section text">
             <div className="headline greeting">
               <BlinkingComponent>
