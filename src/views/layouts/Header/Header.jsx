@@ -6,7 +6,7 @@ import HeaderMenuList from "../../../components/HeaderMenuList/HeaderMenuList";
 import SideMenu from "../../../components/SideMenu/SideMenu";
 
 
-function HeaderLayout() {
+function HeaderLayout({refs=[]}) {
     return (
         <>
             <div className="header-layout-outer">
@@ -18,7 +18,7 @@ function HeaderLayout() {
                         <img src={window.location.origin + '/logo.png'} alt="logo" />
                         <p>FAROL R</p>
                     </div>
-                    <HeaderMenuList />
+                    <HeaderMenuList refs={refs} />
                     <HeaderIcons />
                 </div>
                 <SideMenu />

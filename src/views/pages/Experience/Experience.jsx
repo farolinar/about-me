@@ -4,11 +4,11 @@ import { Experiences } from "../../../utils/data.jsx";
 import Page from "../../layouts/Page/Page";
 import "./Experience.css";
 
-function Experience() {
+function Experience({thisRef}) {
   return (
     <>
       <Page last>
-        <div className="experience-outer">
+        <div className="experience-outer" ref={thisRef}>
           <h1>Experience</h1>
           <ChronoTimeline>
             {Experiences.map((value, index) => {

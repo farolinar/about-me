@@ -3,9 +3,9 @@ import HeaderIcons from "../../../components/HeaderIcons/HeaderIcons";
 import HeaderMenuList from "../../../components/HeaderMenuList/HeaderMenuList";
 import "./Footer.css"
 
-function Footer({children}) {
+function Footer({children, refs=[]}) {
     return <div className="footer-outer">
-        <HeaderMenuList />
+        <HeaderMenuList refs={refs}/>
         <HeaderIcons />
         <Credits />
     </div>
