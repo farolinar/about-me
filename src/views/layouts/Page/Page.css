@@ -1,22 +1,45 @@
 .page {
+    
+    /* clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 95%, 0px 100%); */
+}
+
+.page-content-layer {
     display: flex;
     justify-content: center;
     padding-top: 80px;
     padding-right: 30px;
     padding-bottom: 80px;
     padding-left: 30px;
-    /* clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 95%, 0px 100%); */
+}
+
+.page.main {
+    background: var(--theme-shade-two);
+
+    .page-content-layer {
+        background: var(--theme-shade-four);
+        clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 95%, 0px 100%);
+    }
 }
 
 .page:not(.main) {
     background: var(--theme-shade-two);
-    background: linear-gradient(38.73deg, var(--theme-shade-four) 0%, var(--theme-shade-two) 50%), linear-gradient(141.27deg, var(--theme-shade-two) 50%, var(--theme-shade-four) 100%);
     /* clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 30% 98%, 0px 100%); */
+
+    .page-content-layer {
+        background: var(--theme-shade-two);
+        background: linear-gradient(38.73deg, var(--theme-shade-four) 0%, var(--theme-shade-two) 50%), linear-gradient(141.27deg, var(--theme-shade-two) 50%, var(--theme-shade-four) 100%);
+        clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 30% 98%, 0px 100%);
+    }
+}
+
+.page-content-layer.last {
+    /* temporary until footer exists */
+    clip-path: none !important;
 }
 
  /* minimum iPads (portrait and landscape)  */
  @media only screen and (max-device-width: 1024px) {
-    .page {
+    .page-content-layer {
        padding-top: 30px;
         padding-right: 30px;
         padding-bottom: 30px;
