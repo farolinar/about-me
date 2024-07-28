@@ -23,12 +23,12 @@ export var Experiences = [
 ]
 
 export var CreditsList = [
-    <Fragment>Inspirations from <a href="https://pedrorfpacheco.github.io/portfolio/" title="Pedro Pacheco">Pedro</a></Fragment>,
-    <a href="https://www.flaticon.com/free-icons/code" title="code icons">Code icons</a>,
-    <a href="https://www.flaticon.com/free-icons/moon" title="moon icons">Moon icons</a>,
-    <a href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons</a>,
-    <a href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons</a>,
-    <a href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons</a>,
-    <a href="https://www.flaticon.com/free-icons/hamburger" title="hamburger icons">Hamburger icons</a>,
-    <a href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons</a>
+    <Fragment>Inspirations from <a target="_blank" href="https://pedrorfpacheco.github.io/portfolio/" title="Pedro Pacheco">Pedro</a></Fragment>,
+    <a target="_blank" href="https://www.flaticon.com/free-icons/code" title="code icons">Code icons</a>,
+    <a target="_blank" href="https://www.flaticon.com/free-icons/moon" title="moon icons">Moon icons</a>,
+    <a target="_blank" href="https://www.flaticon.com/free-icons/weather" title="weather icons">Weather icons</a>,
+    <a target="_blank" href="https://www.flaticon.com/free-icons/linkedin" title="linkedin icons">Linkedin icons</a>,
+    <a target="_blank" href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons</a>,
+    <a target="_blank" href="https://www.flaticon.com/free-icons/hamburger" title="hamburger icons">Hamburger icons</a>,
+    <a target="_blank" href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons</a>
 ]
