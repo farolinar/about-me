@@ -12,7 +12,7 @@ function Experience() {
           <h1>Experience</h1>
           <ChronoTimeline>
             {Experiences.map((value, index) => {
-                return <ChronoTimelineItem type="ExperienceCard" data={value} index={index} lastItem={index == Experiences.length - 1} />
+                return <ChronoTimelineItem type="ExperienceCard" data={value} index={index} lastItem={index == Experiences.length - 1} key={`chrono-timeline-item-exp-${index}`} />
             })}
           </ChronoTimeline>
         </div>
