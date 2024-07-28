@@ -2,7 +2,7 @@ import "./SideMenu-min.css"
 import HeaderIcons from "../HeaderIcons/HeaderIcons";
 import HeaderMenuList from "../HeaderMenuList/HeaderMenuList";
 
-function SideMenu() {
+function SideMenu({refs}) {
     return(
         <>
             <div className="side-menu-outer">
@@ -11,7 +11,7 @@ function SideMenu() {
                         <img src={CloseIcon} alt="close" />
                     </button> */}
                     <HeaderIcons brightnessToggleVisible={false} />
-                    <HeaderMenuList />
+                    <HeaderMenuList refs={refs}/>
                 </div>
             </div>
         </>

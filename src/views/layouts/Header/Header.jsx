@@ -21,7 +21,7 @@ function HeaderLayout({refs=[]}) {
                     <HeaderMenuList refs={refs} />
                     <HeaderIcons />
                 </div>
-                <SideMenu />
+                <SideMenu refs={refs} />
             </div>
         </>
     )
