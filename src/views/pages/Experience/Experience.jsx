@@ -2,7 +2,7 @@ import ChronoTimelineItem from "../../../components/ChroneTimelineItem/ChronoTim
 import ChronoTimeline from "../../../components/ChronoTimeline/ChronoTimeline";
 import { Experiences } from "../../../utils/data.jsx";
 import Page from "../../layouts/Page/Page";
-import "./Experience.min.css";
+import "./Experience.css";
 
 function Experience({thisRef}) {
   return (
