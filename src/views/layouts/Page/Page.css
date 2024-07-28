@@ -32,9 +32,13 @@
     }
 }
 
-.page-content-layer.last {
-    /* temporary until footer exists */
-    clip-path: none !important;
+.page.last {
+    background: var(--theme-shade-four);
+
+    .page-content-layer {
+        background: var(--theme-shade-two);
+        clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 95%, 0px 100%);
+    }
 }
 
  /* minimum iPads (portrait and landscape)  */
@@ -49,10 +53,18 @@
 
 /* iPads (portrait and landscape)  */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    
+    .page.last {
+        .page-content-layer {
+            clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 97%, 0px 100%);
+        }
+    }
 }
 
 /* Smartphones (portrait) */
 @media only screen and (max-width: 767px) {
-    
+    .page.last {
+        .page-content-layer {
+            clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 98%, 0px 100%);
+        }
+    }
 }
