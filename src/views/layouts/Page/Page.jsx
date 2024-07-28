@@ -1,10 +1,12 @@
-import "./Page.min.css"
+import "./Page.css"
 
-function Page({ children, main = false }) {
+function Page({ children, main = false, last = false }) {
     return(
         <>
             <div className={`page ${main ? "main": ""}`}>
-                {children}
+                <div className={`page-content-layer ${last ? "last": ""}`}>
+                    {children}
+                </div>
             </div>
         </>
     )
