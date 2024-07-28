@@ -1,0 +1,59 @@
+.credits-outer {
+    font-size: 12px;
+    text-align: center; /* Center the list container */
+    padding: 0;
+    margin: 0;
+    margin-top: 25px;
+
+    ul {
+        margin: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: inline-block;
+    }
+
+    li {
+        display: inline-block;
+        margin: 0 0.25em;
+        vertical-align: middle;
+    }
+
+    li:before {
+        content: '\2022';
+        margin-right: 0.5em;
+    }
+
+    li:first-child {
+        list-style-type: none;
+    }
+
+    li:first-child:before {
+        content: '';
+        margin-left: 0;
+    }
+
+    >div:first-child {
+        font-weight: 800;
+        text-align: center;
+    }
+
+    a {
+        color: var(--theme-text-main);
+        text-decoration: none;
+    }
+}
+
+/* minimum iPads (portrait and landscape)  */
+@media only screen and (max-device-width: 1024px) {
+    .credits-outer {
+        
+    }
+}
+
+/* Smartphones (portrait) */
+@media only screen and (max-width: 767px) {
+    .credits-outer {
+        font-size: 10px;
+    }
+}
