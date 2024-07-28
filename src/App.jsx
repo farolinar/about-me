@@ -17,7 +17,7 @@ function App() {
     <>
       <div className="App">
         <HeaderLayout />
-        <SideMenu />
+        {/* <SideMenu /> */}
         <About />
         <Experience />
       </div>

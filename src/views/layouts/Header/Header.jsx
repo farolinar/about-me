@@ -3,6 +3,7 @@ import HamburgerIcon from "../../../assets/img/hamburger.png";
 import HeaderIcons from "../../../components/HeaderIcons/HeaderIcons";
 import { showSideMenu } from "../../../utils/viewUtil";
 import HeaderMenuList from "../../../components/HeaderMenuList/HeaderMenuList";
+import SideMenu from "../../../components/SideMenu/SideMenu";
 
 
 function HeaderLayout() {
@@ -20,6 +21,7 @@ function HeaderLayout() {
                     <HeaderMenuList />
                     <HeaderIcons />
                 </div>
+                <SideMenu />
             </div>
         </>
     )
