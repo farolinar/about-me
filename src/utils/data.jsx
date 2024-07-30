@@ -16,10 +16,10 @@ function CreateExperienceCard(title, place, time, description, img, skills = [])
 }
 
 export var Experiences = [
-    CreateExperienceCard("Back End Engineer", "Kitabisa", "Jul 2024 - Now", "Developing insurance service - SalingJaga.", KitaBisaImg, ["Go", "SQL"]),
-    CreateExperienceCard("Back End Engineer", "Klikdokter - Kalbe", "Jul 2023 - May 2024", "Developed API using Go for Pregnancy and Publishing microservice.", KlikdokterImg, ["Go", "RabbitMQ", "REST APIs", "SQL"]),
+    CreateExperienceCard("Back End Engineer", "Kitabisa", "Jul 2024 - Now", "Developing insurance service - SalingJaga, a life insurance product featuring a shared-cost system. This innovative approach allows participants to pool their resources collectively, making life insurance more accessible and affordable while providing financial protection to its members.", KitaBisaImg, ["Go", "SQL"]),
+    CreateExperienceCard("Back End Engineer", "Klikdokter - Kalbe", "Jul 2023 - May 2024", "Developed Pregnancy and Publishing microservices using Go for Kalbe's Hallobumil app. This API facilitates monitoring of pre-pregnancy, pregnancy, and post-pregnancy stages, providing users with valuable insights throughout their pregnancy journey.", KlikdokterImg, ["Go", "RabbitMQ", "REST APIs", "SQL"]),
     CreateExperienceCard("Application Developer", "CBN", "Mar 2022 - Jun 2023", "Migrated legacy monolithic applications (PHP) to modern microservice architectures using Go for better manageability and flexibility in response to changing business requirements.\nCollaborated closely with frontend developers to develop Medical Claim service using Laravel.", CBNImg, ["Go", "Docker", "Laravel", "SQL"]),
-    CreateExperienceCard("Full Stack Developer", "TapTalk.io", "Sep 2019 - Mar 2022", "Developing e-Commerce, Moselo, using React and TapTalk.io products using Go.", TapTalkImg, ["React", "Go", "SQL"])
+    CreateExperienceCard("Full Stack Developer", "TapTalk.io", "Sep 2019 - Mar 2022", "Developed e-commerce platform - moselo.com - for handcrafted gifts using React, creating a dynamic and user-friendly shopping experience. Additionally, developing API for dashboards and promotional websites for TapTalk.io's B2B products, including their omnichannel platform and SMS/OTP services, enhancing visibility and functionality for their business solutions.", TapTalkImg, ["React", "Go", "SQL"])
 ]
 
 export var CreditsList = [
