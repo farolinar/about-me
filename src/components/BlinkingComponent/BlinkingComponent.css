@@ -1,6 +1,7 @@
 .blinking-component {
-    animation: 
+    animation:
         blinking 1s step-end infinite;
+    filter: drop-shadow(0 0 4px var(--glow-accent));
 }
 
 @keyframes blinking {

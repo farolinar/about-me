@@ -100,6 +100,17 @@
     background: linear-gradient(140deg, var(--logo-shade-one), var(--logo-shade-two)) border-box;
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
+    filter: drop-shadow(0 0 8px var(--glow-cyan)) drop-shadow(0 0 12px var(--glow-magenta));
+    animation: border-glow 3s ease-in-out infinite;
+}
+
+@keyframes border-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 8px var(--glow-cyan)) drop-shadow(0 0 12px var(--glow-magenta));
+    }
+    50% {
+        filter: drop-shadow(0 0 12px var(--glow-cyan)) drop-shadow(0 0 18px var(--glow-magenta));
+    }
 }
 
 /* minimum iPads (portrait and landscape)  */

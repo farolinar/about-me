@@ -3,6 +3,8 @@
     top: 0px;
     z-index: 10;
     background-color: var(--theme-shade-four);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 0 30px var(--glow-cyan);
+    transition: box-shadow 0.3s ease;
 }
 
 .header-layout-outer .logo p {
@@ -27,12 +29,13 @@
     letter-spacing: 2px;
     margin: 0;
     font-size: 29px;
+    filter: drop-shadow(0 0 8px var(--glow-cyan)) drop-shadow(0 0 12px var(--glow-magenta));
 
     /* overflow: hidden;
     border-right: .15em solid var(--theme-shade-one);
     white-space: nowrap;
     margin: 0 auto;
-    animation: 
+    animation:
         typing 0.8s steps(13, end),
         blink-caret .75s step-end infinite; */
 }

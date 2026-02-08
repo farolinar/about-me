@@ -11,6 +11,10 @@
 
   --logo-shade-one: rgba(134,211,255);
   --logo-shade-two: rgba(229,132,252,1);
+
+  --glow-cyan: rgba(134,211,255,0.4);
+  --glow-magenta: rgba(229,132,252,0.4);
+  --glow-accent: rgba(160,32,76,0.3);
 }
 :root,
 :root.dark {
@@ -25,6 +29,10 @@
 
   --logo-shade-one: rgba(134,211,255);
   --logo-shade-two: rgba(229,132,252,1);
+
+  --glow-cyan: rgba(134,211,255,0.5);
+  --glow-magenta: rgba(229,132,252,0.5);
+  --glow-accent: rgba(255,199,100,0.4);
 }
 
 body {
@@ -39,10 +47,37 @@ body {
 
   color: var(--theme-text-main);
   background-color: var(--theme-shade-four);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      var(--theme-text-main) 2px,
+      var(--theme-text-main) 3px
+    );
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 h1, h2 {
   font-weight: 600;
+  text-shadow: 0 0 20px var(--glow-cyan);
 }
 
 h3, h4, h5 {

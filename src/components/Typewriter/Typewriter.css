@@ -10,6 +10,7 @@
 .typing-component .typewrite > .wrap {
     border-right: 0.08em solid var(--theme-text-main);
     animation: caret 1s steps(1) infinite;
+    filter: drop-shadow(0 0 3px var(--glow-cyan)) drop-shadow(0 0 6px var(--glow-cyan));
 }
 
 /* The typewriter cursor effect */

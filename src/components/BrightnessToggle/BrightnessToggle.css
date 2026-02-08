@@ -5,6 +5,12 @@
     border-radius: 50%;
     border: none;
     background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.brightness-toggle:hover {
+    filter: drop-shadow(0 0 8px var(--glow-accent));
+    transform: scale(1.1);
 }
 
 .brightness-toggle img {
