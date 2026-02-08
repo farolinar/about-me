@@ -1,38 +1,65 @@
 /* :root, */
 :root.light {
-  --theme-shade-four: #CDFFFC;
-  --theme-shade-three: #FFC764;
-  --theme-shade-two: #FF577F;
-  --theme-shade-one: #FF884B;
+  /* Enhanced Light Theme - Vaporwave Sunset */
+  --theme-shade-four: #E8F4FF;
+  --theme-shade-three: #FFB8E6;
+  --theme-shade-two: #FF3D9A;
+  --theme-shade-one: #FF6B35;
 
-  --theme-text-main: #23103A;
-  --theme-text-secondary: #282D4F;
-  --theme-text-color: #A0204C;
+  --theme-text-main: #1A0B2E;
+  --theme-text-secondary: #3D2463;
+  --theme-text-color: #D4006E;
 
-  --logo-shade-one: rgba(134,211,255);
-  --logo-shade-two: rgba(229,132,252,1);
+  /* Vibrant logo gradients */
+  --logo-shade-one: #00F0FF;
+  --logo-shade-two: #FF00F5;
+  --logo-shade-three: #FFD700;
 
-  --glow-cyan: rgba(134,211,255,0.4);
-  --glow-magenta: rgba(229,132,252,0.4);
-  --glow-accent: rgba(160,32,76,0.3);
+  /* Enhanced glow effects */
+  --glow-cyan: rgba(0, 240, 255, 0.6);
+  --glow-magenta: rgba(255, 0, 245, 0.6);
+  --glow-accent: rgba(212, 0, 110, 0.5);
+  --glow-gold: rgba(255, 215, 0, 0.4);
+
+  /* Background gradient colors */
+  --bg-gradient-start: #1A0B2E;
+  --bg-gradient-mid: #3D0F5C;
+  --bg-gradient-end: #5A0A7F;
 }
+
 :root,
 :root.dark {
-  --theme-shade-four: #23103A;
-  --theme-shade-three: #282D4F;
-  --theme-shade-two: #A0204C;
+  /* Enhanced Dark Theme - Deep Vaporwave */
+  --theme-shade-four: #0D0221;
+  --theme-shade-three: #1A0B2E;
+  --theme-shade-two: #3D0F5C;
   --theme-shade-one: #FF6C00;
 
-  --theme-text-main: #CDFFFC;
-  --theme-text-secondary: #cdfffce0;
-  --theme-text-color: #FFC764;
+  --theme-text-main: #00F0FF;
+  --theme-text-secondary: #B8E9FF;
+  --theme-text-color: #FF00F5;
 
-  --logo-shade-one: rgba(134,211,255);
-  --logo-shade-two: rgba(229,132,252,1);
+  /* Vibrant logo gradients */
+  --logo-shade-one: #00F0FF;
+  --logo-shade-two: #FF00F5;
+  --logo-shade-three: #FFD700;
 
-  --glow-cyan: rgba(134,211,255,0.5);
-  --glow-magenta: rgba(229,132,252,0.5);
-  --glow-accent: rgba(255,199,100,0.4);
+  /* Enhanced glow effects */
+  --glow-cyan: rgba(0, 240, 255, 0.7);
+  --glow-magenta: rgba(255, 0, 245, 0.7);
+  --glow-accent: rgba(255, 215, 0, 0.6);
+  --glow-gold: rgba(255, 215, 0, 0.5);
+
+  /* Background gradient colors */
+  --bg-gradient-start: #0D0221;
+  --bg-gradient-mid: #1A0B2E;
+  --bg-gradient-end: #3D0F5C;
+
+  /* Neon accent colors */
+  --neon-pink: #FF10F0;
+  --neon-blue: #00D4FF;
+  --neon-purple: #B537F2;
+  --neon-orange: #FF6C00;
 }
 
 body {
@@ -46,10 +73,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   color: var(--theme-text-main);
-  background-color: var(--theme-shade-four);
+  background: var(--theme-shade-four);
+  /* background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 50%, var(--bg-gradient-end) 100%); */
+  background-attachment: fixed;
   position: relative;
 }
 
+/* Enhanced scanline effect */
 body::before {
   content: "";
   position: fixed;
@@ -59,7 +89,7 @@ body::before {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.03;
+  opacity: 0.04;
   background-image:
     repeating-linear-gradient(
       0deg,
@@ -68,6 +98,32 @@ body::before {
       var(--theme-text-main) 2px,
       var(--theme-text-main) 3px
     );
+  animation: scanline-drift 20s linear infinite;
+}
+
+/* Subtle grid overlay for retro computer aesthetic */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.02;
+  background-image:
+    repeating-linear-gradient(90deg, transparent, transparent 49px, var(--glow-cyan) 49px, var(--glow-cyan) 50px),
+    repeating-linear-gradient(0deg, transparent, transparent 49px, var(--glow-magenta) 49px, var(--glow-magenta) 50px);
+}
+
+@keyframes scanline-drift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }
 
 body > * {
@@ -77,11 +133,18 @@ body > * {
 
 h1, h2 {
   font-weight: 600;
-  text-shadow: 0 0 20px var(--glow-cyan);
+  background: linear-gradient(135deg, var(--logo-shade-one) 0%, var(--logo-shade-two) 50%, var(--logo-shade-three) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px var(--glow-cyan), 0 0 50px var(--glow-magenta);
+  filter: drop-shadow(0 0 20px var(--glow-cyan)) drop-shadow(0 0 30px var(--glow-magenta));
 }
 
 h3, h4, h5 {
   font-weight: 500;
+  color: var(--theme-text-color);
+  text-shadow: 0 0 15px var(--glow-magenta);
 }
 
 p {

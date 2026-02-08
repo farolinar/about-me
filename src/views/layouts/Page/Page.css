@@ -1,5 +1,5 @@
 .page {
-    
+
     /* clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 95%, 0px 100%); */
 }
 
@@ -13,31 +13,76 @@
 }
 
 .page.main {
-    background: var(--theme-shade-two) !important;
+    background: none;
+    /* background: var(--theme-shade-two) !important; */
+    position: relative;
 
     .page-content-layer {
-        background: var(--theme-shade-four);
-        clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 95%, 0px 100%);
+        /* background: var(--theme-shade-four); */
+        /* clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 95%, 0px 100%); */
     }
 }
 
+.page.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(circle at 30% 50%, var(--glow-cyan) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, var(--glow-magenta) 0%, transparent 50%); */
+    opacity: 0.08;
+    pointer-events: none;
+}
+
 .page:not(.main) {
-    background: var(--theme-shade-two) !important;
+    background: none;
+    /* background: var(--theme-shade-two) !important; */
+    position: relative;
     /* clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 30% 98%, 0px 100%); */
 
     .page-content-layer {
-        background: var(--theme-shade-two);
-        background: linear-gradient(38.73deg, var(--theme-shade-four) 0%, var(--theme-shade-two) 50%), linear-gradient(141.27deg, var(--theme-shade-two) 50%, var(--theme-shade-four) 100%) !important;
+        /* background: linear-gradient(38.73deg, var(--theme-shade-four) 0%, var(--theme-shade-two) 50%),
+                    linear-gradient(141.27deg, var(--theme-shade-two) 50%, var(--theme-shade-four) 100%) !important; */
         clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 30% 98%, 0px 100%) !important;
     }
 }
 
+.page:not(.main)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(circle at 50% 30%, var(--glow-magenta) 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, var(--glow-cyan) 0%, transparent 50%); */
+    opacity: 0.06;
+    pointer-events: none;
+}
+
 .page.last {
-    background: var(--theme-shade-four) !important;
+    /* background: var(--theme-shade-two) !important; */
+    position: relative;
 
     .page-content-layer {
         clip-path: polygon(0px 0px, 100% 0px, 100% 100%, 70% 95%, 0px 100%) !important;
+        /* background: var(--theme-shade-four); */
     }
+}
+
+.page.last::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 40% 60%, var(--glow-gold) 0%, transparent 50%),
+                radial-gradient(circle at 60% 40%, var(--glow-cyan) 0%, transparent 50%);
+    opacity: 0.05;
+    pointer-events: none;
 }
 
  /* minimum iPads (portrait and landscape)  */

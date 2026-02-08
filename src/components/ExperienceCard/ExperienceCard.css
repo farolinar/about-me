@@ -5,6 +5,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 500px;
+    background: linear-gradient(135deg, rgba(13, 2, 33, 0.6) 0%, rgba(26, 11, 46, 0.4) 100%);
+    border-radius: 15px;
 
     -ms-transform: translateY(100%); /* IE 9 */
     -webkit-transform: translateY(100%); /* Safari */
@@ -55,12 +57,15 @@
     .title {
         font-weight: bold;
         font-size: 18px;
+        color: var(--theme-text-main);
+        text-shadow: 0 0 10px var(--glow-cyan);
     }
 
     .place {
         font-weight: 600;
         font-size: 14px;
-        color: var(--theme-text-secondary);
+        color: var(--theme-text-color);
+        text-shadow: 0 0 8px var(--glow-magenta);
     }
 
     .time {
@@ -71,6 +76,7 @@
     .description {
         line-height: normal;
         margin-top: 15px;
+        color: var(--theme-text-secondary);
     }
 
     .skills {
@@ -81,7 +87,8 @@
         > :first-child {
             margin-right: 15px;
             font-weight: 600;
-            color: var(--theme-text-main);
+            color: var(--theme-text-color);
+            text-shadow: 0 0 8px var(--glow-magenta);
         }
 
         .skill {
@@ -97,20 +104,28 @@
     inset: 0;
     border-radius: 15px;
     border: 2px solid transparent;
-    background: linear-gradient(140deg, var(--logo-shade-one), var(--logo-shade-two)) border-box;
+    background: linear-gradient(140deg, var(--logo-shade-one), var(--logo-shade-two), var(--logo-shade-three)) border-box;
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
-    filter: drop-shadow(0 0 8px var(--glow-cyan)) drop-shadow(0 0 12px var(--glow-magenta));
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    filter: drop-shadow(0 0 12px var(--glow-cyan)) drop-shadow(0 0 18px var(--glow-magenta)) drop-shadow(0 0 8px var(--glow-gold));
     animation: border-glow 3s ease-in-out infinite;
 }
 
 @keyframes border-glow {
     0%, 100% {
-        filter: drop-shadow(0 0 8px var(--glow-cyan)) drop-shadow(0 0 12px var(--glow-magenta));
+        filter: drop-shadow(0 0 12px var(--glow-cyan)) drop-shadow(0 0 18px var(--glow-magenta)) drop-shadow(0 0 8px var(--glow-gold));
     }
     50% {
-        filter: drop-shadow(0 0 12px var(--glow-cyan)) drop-shadow(0 0 18px var(--glow-magenta));
+        filter: drop-shadow(0 0 18px var(--glow-cyan)) drop-shadow(0 0 28px var(--glow-magenta)) drop-shadow(0 0 15px var(--glow-gold));
     }
+}
+
+.experience-card-outer:hover {
+    background: linear-gradient(135deg, rgba(13, 2, 33, 0.8) 0%, rgba(26, 11, 46, 0.6) 100%);
+    transform: translateY(-5px);
+    transition: all 0.3s ease;
 }
 
 /* minimum iPads (portrait and landscape)  */

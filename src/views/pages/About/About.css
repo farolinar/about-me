@@ -11,11 +11,16 @@
 .about-outer .section.text .headline {
     display: flex;
     font-weight: 700;
-    color: var(--theme-text-color);
+
+    /* Enhanced gradient text for hero headline */
+    background: linear-gradient(135deg, var(--logo-shade-one) 0%, var(--logo-shade-two) 50%, var(--logo-shade-three) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 
     text-align: left;
     font-size: 2.5em;
-    text-shadow: 0 0 15px var(--glow-accent);
+    filter: drop-shadow(0 0 25px var(--glow-cyan)) drop-shadow(0 0 35px var(--glow-magenta)) drop-shadow(0 0 15px var(--glow-gold));
 }
 
 .about-outer .section.text .introduction {
@@ -23,7 +28,8 @@
     font-size: 1.8em;
 
     color: var(--theme-text-main);
-    
+    text-shadow: 0 0 20px var(--glow-cyan);
+
     margin-top: 10px;
     margin-bottom: 40px;
 }
@@ -32,11 +38,13 @@
     /* margin-top: 40px; */
     color: var(--theme-text-secondary);
     font-size: 20px;
+    line-height: 1.6;
 }
 
  /* components */
  .about-outer .text-prompt {
-    color: var(--theme-text-secondary);
+    color: var(--theme-text-color);
+    text-shadow: 0 0 10px var(--glow-magenta);
  }
 
  /* minimum iPads (portrait and landscape)  */
@@ -81,7 +89,7 @@
 
 /* iPads (portrait and landscape)  */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    
+
 }
 
 /* Smartphones (portrait) */
