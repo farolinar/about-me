@@ -4,14 +4,18 @@ import "./Typewriter.css";
 
 function Typewriter({ dataTypes = [] }) {
   useEffect(() => {
+    let timeoutId = null;
+    let typewriterInstance = null;
+    
     var TxtType = function(el, toRotate, period) {
       this.toRotate = toRotate;
       this.el = el;
       this.loopNum = 0;
       this.period = parseInt(period, 10) || 2000;
       this.txt = '';
-      this.tick();
       this.isDeleting = false;
+      this.timeoutId = null;
+      this.tick();
     };
     
     TxtType.prototype.tick = function() {
@@ -40,25 +44,49 @@ function Typewriter({ dataTypes = [] }) {
         delta = 500;
         }
     
-        setTimeout(function() {
+        this.timeoutId = setTimeout(function() {
         that.tick();
         }, delta);
     };
     
-    window.onload = function() {
+    TxtType.prototype.stop = function() {
+        if (this.timeoutId) {
+            clearTimeout(this.timeoutId);
+        }
+    };
+    
+    // Wait for DOM to be ready before initializing
+    timeoutId = setTimeout(() => {
         var elements = document.getElementsByClassName('typewrite');
         for (var i=0; i<elements.length; i++) {
+            // Check if this element has already been initialized
+            if (elements[i].getAttribute('data-typewriter-initialized') === 'true') {
+                continue;
+            }
+            
             var toRotate = elements[i].getAttribute('data-type');
             var period = elements[i].getAttribute('data-period');
             if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
+              // Mark as initialized to prevent multiple instances
+              elements[i].setAttribute('data-typewriter-initialized', 'true');
+              typewriterInstance = new TxtType(elements[i], JSON.parse(toRotate), period);
             }
         }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        // css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
+    }, 100);
+    
+    // Cleanup function to stop typewriter when component unmounts
+    return () => {
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        if (typewriterInstance && typewriterInstance.stop) {
+            typewriterInstance.stop();
+        }
+        // Remove the initialized flag so it can be re-initialized if needed
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            elements[i].removeAttribute('data-typewriter-initialized');
+        }
     };
   
   }, [])

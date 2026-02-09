@@ -2,7 +2,43 @@
     position: sticky;
     top: 0px;
     z-index: 10;
-    background-color: var(--theme-shade-four);
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-header) 100%);
+    backdrop-filter: blur(10px);
+    transition: border-bottom 0.5s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.header-layout-outer::after {
+    content: "";
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    pointer-events: none;
+    opacity: calc(var(--glow-opacity, 0) * 0.4);
+    transition: opacity 0.3s ease-out;
+    background: radial-gradient(ellipse at center top, var(--glow-cyan) 0%, transparent 70%),
+                radial-gradient(ellipse at center top, var(--glow-magenta) 0%, transparent 60%);
+}
+
+.header-layout-outer.scrolled {
+    border-bottom: 1px solid var(--border-default);
+}
+
+.header-layout-outer.scrolled::after {
+    animation: header-glow-pulse 3s ease-in-out 0.8s infinite;
+}
+
+@keyframes header-glow-pulse {
+    0%, 100% {
+        opacity: calc(var(--glow-opacity, 0) * 0.4);
+        transform: scaleY(1);
+    }
+    50% {
+        opacity: calc(var(--glow-opacity, 0) * 0.6);
+        transform: scaleY(1.2);
+    }
 }
 
 .header-layout-outer .logo p {
@@ -19,26 +55,40 @@
     font-variation-settings:
         "BLED" 0,
         "SCAN" 0;
-    color: var(--logo-shade-one);
-    background: -webkit-linear-gradient(var(--logo-shade-one), var(--logo-shade-two));
+    background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: 2px;
     margin: 0;
     font-size: 29px;
+    filter: drop-shadow(0 0 15px var(--glow-cyan)) drop-shadow(0 0 20px var(--glow-magenta)) drop-shadow(0 0 10px var(--glow-gold));
+    animation: logo-glow-shift 5s ease-in-out infinite;
 
     /* overflow: hidden;
     border-right: .15em solid var(--theme-shade-one);
     white-space: nowrap;
     margin: 0 auto;
-    animation: 
+    animation:
         typing 0.8s steps(13, end),
         blink-caret .75s step-end infinite; */
 }
 
+@keyframes logo-glow-shift {
+    0%, 100% {
+        filter: drop-shadow(0 0 15px var(--glow-cyan)) drop-shadow(0 0 20px var(--glow-magenta)) drop-shadow(0 0 10px var(--glow-gold));
+    }
+    33% {
+        filter: drop-shadow(0 0 20px var(--glow-magenta)) drop-shadow(0 0 15px var(--glow-gold)) drop-shadow(0 0 10px var(--glow-cyan));
+    }
+    66% {
+        filter: drop-shadow(0 0 20px var(--glow-gold)) drop-shadow(0 0 15px var(--glow-cyan)) drop-shadow(0 0 10px var(--glow-magenta));
+    }
+}
+
 .header-layout-outer .logo img {
     height: 32px;
+    filter: drop-shadow(0 0 8px var(--glow-cyan));
 }
 
 .header-layout {
@@ -85,7 +135,7 @@
     .header-layout .hamburger {
         display: block;
     }
-    
+
     .header-layout-outer .logo img {
         display: none;
     }
@@ -105,7 +155,7 @@
 
 /* iPads (portrait and landscape)  */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    
+
 }
 
 /* Smartphones (portrait) */
@@ -124,7 +174,7 @@
     from { width: 0 }
     to { width: 100% }
   }
-  
+
 /* The typewriter cursor effect */
 @keyframes blink-caret {
     from, to { border-color: transparent }

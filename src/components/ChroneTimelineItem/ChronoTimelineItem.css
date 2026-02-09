@@ -1,5 +1,26 @@
-.chrono-timeline-item {
-    
+/* Timeline separator styling - Dark theme (default) */
+:root .chrono-timeline-item .MuiTimelineDot-root,
+:root.dark .chrono-timeline-item .MuiTimelineDot-root {
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 8px var(--glow-cyan);
+}
+
+:root .chrono-timeline-item .MuiTimelineConnector-root,
+:root.dark .chrono-timeline-item .MuiTimelineConnector-root {
+    background-color: var(--accent-purple);
+    box-shadow: 0 0 4px var(--glow-purple);
+}
+
+/* Timeline separator styling - Light theme */
+:root.light .chrono-timeline-item .MuiTimelineDot-root {
+    border-color: var(--accent-cyan);
+    border-width: 2px;
+    box-shadow: 0 0 4px var(--glow-cyan);
+}
+
+:root.light .chrono-timeline-item .MuiTimelineConnector-root {
+    background-color: var(--accent-purple);
+    opacity: 0.6;
 }
 
 /* Smartphones (portrait) */

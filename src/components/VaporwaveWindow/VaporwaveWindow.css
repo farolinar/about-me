@@ -1,0 +1,153 @@
+
+/* Container */
+.vaporwave-window {
+    position: relative;
+    backdrop-filter: blur(10px);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--bg-surface);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+/* Border Glow Animation */
+.vaporwave-window::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    filter: drop-shadow(0 0 5px var(--glow-cyan)) drop-shadow(0 0 6px var(--glow-purple)) drop-shadow(0 0 4px var(--glow-pink));
+    animation: window-border-glow 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+/* Holographic shine overlay */
+.vaporwave-window::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        var(--glow-pink) 40%,
+        var(--glow-purple) 50%,
+        var(--glow-cyan) 60%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.vaporwave-window:hover::after {
+    animation: window-shine 4s ease-in-out;
+}
+
+/* Window Header */
+.window-header {
+    height: 36px;
+    background: linear-gradient(90deg, var(--bg-tertiary), rgba(26, 11, 46, 0.9));
+    border-bottom: 2px solid var(--accent-magenta);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    flex-shrink: 0;
+}
+
+.window-title {
+    color: var(--text-accent);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px var(--glow-magenta);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 100%;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, filter 0.2s ease;
+    cursor: pointer;
+}
+
+.control:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+.control.minimize { background-color: var(--accent-gold); box-shadow: 0 0 5px var(--glow-gold); }
+.control.maximize { background-color: var(--accent-teal); box-shadow: 0 0 5px var(--glow-teal); }
+.control.close { background-color: var(--accent-pink); box-shadow: 0 0 5px var(--glow-pink); }
+
+/* Window Content */
+.window-content {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Keyframes */
+@keyframes window-shine {
+    0% { opacity: 0; transform: translateX(-100%) rotate(45deg); }
+    50% { opacity: 0.3; }
+    100% { opacity: 0; transform: translateX(100%) rotate(45deg); }
+}
+
+@keyframes window-border-glow {
+    0%, 100% { filter: drop-shadow(0 0 5px var(--glow-cyan)) drop-shadow(0 0 6px var(--glow-purple)) drop-shadow(0 0 4px var(--glow-pink)); }
+    33% { filter: drop-shadow(0 0 6px var(--glow-purple)) drop-shadow(0 0 8px var(--glow-pink)) drop-shadow(0 0 5px var(--glow-cyan)); }
+    66% { filter: drop-shadow(0 0 6px var(--glow-pink)) drop-shadow(0 0 8px var(--glow-cyan)) drop-shadow(0 0 5px var(--glow-purple)); }
+}
+
+/* Hover Effects matching Design System logic */
+/* Dark theme (default) */
+:root .vaporwave-window:hover,
+:root.dark .vaporwave-window:hover {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 50%, var(--bg-secondary) 100%);
+    transform: translateY(-5px);
+    box-shadow:
+        0 0 8px var(--glow-cyan),
+        0 0 12px var(--glow-magenta),
+        0 15px 30px var(--glow-white);
+    filter:
+        drop-shadow(2px 0 0 var(--glow-cyan))
+        drop-shadow(-2px 0 0 var(--glow-pink))
+        drop-shadow(0 2px 0 var(--glow-purple));
+}
+
+/* Light theme */
+:root.light .vaporwave-window:hover {
+    box-shadow:
+        0 0 8px var(--glow-cyan),
+        0 0 12px var(--glow-magenta),
+        0 15px 30px var(--glow-white);
+    filter:
+        drop-shadow(2px 0 0 var(--glow-cyan))
+        drop-shadow(-2px 0 0 var(--glow-pink))
+        drop-shadow(0 2px 0 var(--glow-purple));
+}

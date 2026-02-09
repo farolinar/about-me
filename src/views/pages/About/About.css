@@ -1,103 +1,97 @@
 .about-outer {
-    display: flex;
-    max-width: 1100px;
+  display: flex;
+  max-width: 1100px;
 }
 
 .about-outer .section {
-    width: 50%;
-    /* padding-top: 5vh; */
+  width: 50%;
 }
 
 .about-outer .section.text .headline {
-    display: flex;
-    font-weight: 700;
-    color: var(--theme-text-color);
-
-    text-align: left;
-    font-size: 2.5em;
+  display: flex;
+  font-weight: 700;
+  color: var(--theme-text-color);
+  text-align: left;
+  font-size: 2.5em;
+  text-shadow: 0 0 15px var(--glow-accent);
 }
 
 .about-outer .section.text .introduction {
-    font-weight: 700;
-    font-size: 1.8em;
-
-    color: var(--theme-text-main);
-    
-    margin-top: 10px;
-    margin-bottom: 40px;
+  font-weight: 700;
+  font-size: 1.8em;
+  color: var(--theme-text-main);
+  margin-top: 10px;
+  margin-bottom: 40px;
 }
 
 .about-outer .section.text .content {
-    /* margin-top: 40px; */
-    color: var(--theme-text-secondary);
-    font-size: 20px;
+  color: var(--theme-text-secondary);
+  font-size: 20px;
 }
 
- /* components */
- .about-outer .text-prompt {
-    color: var(--theme-text-secondary);
- }
+.about-outer .text-prompt {
+  color: var(--theme-text-secondary);
+}
 
- /* minimum iPads (portrait and landscape)  */
+.about-outer .section.visual {
+  padding-left: 50px;
+}
+
+/* Tablet */
 @media only screen and (max-device-width: 1024px) {
-    .about-outer {
-        flex-direction: column;
-    }
+  .about-outer {
+    flex-direction: column;
+  }
 
-    .about-outer .section {
-        width: 100%;
-    }
+  .about-outer .section {
+    width: 100%;
+  }
 
-    .about-outer .section.text .headline {
-        text-align: center;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
+  .about-outer .section.text .headline {
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
 
-    .about-outer .section.text .headline.greeting {
-        /* font-size: 2em; */
-    }
+  .about-outer .section.text .headline.my-name {
+    font-size: 2em;
+  }
 
-    .about-outer .section.text .headline.my-name {
-        font-size: 2em;
-    }
+  .about-outer .section.text .headline.greeting span {
+    display: none;
+  }
 
-    .about-outer .section.text .headline.greeting span {
-        display: none;
-    }
+  .about-outer .section.text .introduction {
+    font-size: 1.6em;
+    text-align: center;
+  }
 
-    .about-outer .section.text .introduction {
-        font-size: 1.6em;
-        text-align: center;
-    }
+  .about-outer .section.text .content {
+    font-size: 20px;
+    text-align: center;
+  }
 
-    .about-outer .section.text .content {
-        /* margin-top: 40px; */
-        font-size: 20px;
-        text-align: center;
-    }
+  .about-outer .section.visual {
+    display: none;
+    padding-left: 0;
+  }
 }
 
-/* iPads (portrait and landscape)  */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    
-}
-
-/* Smartphones (portrait) */
+/* Mobile */
 @media only screen and (max-width: 767px) {
-    .about-outer .section.text .headline.greeting {
-        font-size: 2em;
-    }
+  .about-outer .section.text .headline.greeting {
+    font-size: 2em;
+  }
 
-    .about-outer .section.text .headline.my-name {
-        font-size: 1.9em;
-    }
+  .about-outer .section.text .headline.my-name {
+    font-size: 1.9em;
+  }
 
-    .about-outer .section.text .content {
-        font-size: 16px;
-    }
+  .about-outer .section.text .content {
+    font-size: 16px;
+  }
 
-    .about-outer .section.text .introduction {
-        font-size: 1.2em;
-    }
+  .about-outer .section.text .introduction {
+    font-size: 1.2em;
+  }
 }

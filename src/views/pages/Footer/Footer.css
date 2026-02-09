@@ -8,6 +8,94 @@
     padding-bottom: 80px;
     padding-left: 30px;
     flex-direction: column;
+    position: relative;
+    /* Enhanced footer background with gradient overlay */
+    background: linear-gradient(0deg, var(--bg-header) 0%, transparent 100%);
+}
+
+/* Ambient glow effect at top of footer */
+.footer-outer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--glow-cyan) 20%, var(--glow-magenta) 50%, var(--glow-cyan) 80%, transparent 100%);
+    box-shadow:
+        0 0 20px var(--glow-cyan),
+        0 0 40px var(--glow-magenta),
+        0 0 30px var(--glow-gold);
+    animation: footer-line-glow 4s ease-in-out infinite;
+}
+
+@keyframes footer-line-glow {
+    0%, 100% {
+        opacity: 0.6;
+        box-shadow:
+            0 0 20px var(--glow-cyan),
+            0 0 40px var(--glow-magenta),
+            0 0 30px var(--glow-gold);
+    }
+    50% {
+        opacity: 1;
+        box-shadow:
+            0 0 30px var(--glow-cyan),
+            0 0 60px var(--glow-magenta),
+            0 0 50px var(--glow-gold);
+    }
+}
+
+/* Subtle radial glow behind footer content */
+/* Dark theme (default - subtle) */
+:root .footer-outer::after,
+:root.dark .footer-outer::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 80%;
+    background: radial-gradient(ellipse at center, var(--glow-cyan) 0%, var(--glow-magenta) 50%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    animation: footer-ambient-pulse-dark 6s ease-in-out infinite;
+}
+
+/* Light theme (more visible) */
+:root.light .footer-outer::after {
+    animation: footer-ambient-pulse-light 6s ease-in-out infinite;
+}
+
+/* Dark theme animation - subtle */
+@keyframes footer-ambient-pulse-dark {
+    0%, 100% {
+        opacity: 0.15;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Light theme animation - more visible */
+@keyframes footer-ambient-pulse-light {
+    0%, 100% {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+.footer-outer > * {
+    position: relative;
+    z-index: 1;
 }
 
 /* minimum iPads (portrait and landscape)  */

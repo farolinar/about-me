@@ -1,1 +1,1 @@
-.blinking-component{animation:blinking 1s step-end infinite;}@keyframes blinking{from,to{visibility:hidden}50%{visibility:visible}}
+.blinking-component{animation:blinking 1s step-end infinite;filter:drop-shadow(0 0 4px var(--glow-accent))}@keyframes blinking{from,to{visibility:hidden}50%{visibility:visible}}

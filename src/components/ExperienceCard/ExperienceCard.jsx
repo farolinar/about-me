@@ -1,8 +1,13 @@
 import { Chip, Grid } from "@mui/material";
 import "./ExperienceCard.css"
+import VaporwaveWindow from "../VaporwaveWindow/VaporwaveWindow";
 
 function ExperienceCard({data, ref}) {
-    return <div className="experience-card-outer" ref={ref}>
+    return <VaporwaveWindow 
+        ref={ref}
+        className="experience-card-outer"
+        title=""
+    >
         <div className="head">
             <div className="image">
                 <img src={data.img} alt={data.place} />
@@ -18,14 +23,13 @@ function ExperienceCard({data, ref}) {
             <p>Skills</p>
             <Grid container spacing={1} >
                 {data.skills.map((value, index) => {
-                    return <Grid item>
+                    return <Grid item key={index}>
                         <Chip label={value} className="skill" />
                     </Grid>
                 })}
             </Grid>
         </div>
-        
-    </div>
+    </VaporwaveWindow>
 }
 
 export default ExperienceCard;
