@@ -41,21 +41,24 @@
   -webkit-tap-highlight-color: transparent;
   transition: all 0.3s ease;
   color: var(--text-primary);
+  position: relative;
 }
 
 .clickable-text:hover, .clickable-text:active {
   font-weight: 600;
-  background: var(--gradient-text);
+  background: var(--gradient-vaporwave);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% 200%;
   filter:
     drop-shadow(0 0 12px var(--glow-cyan))
-    drop-shadow(0 0 18px var(--glow-magenta))
-    drop-shadow(0 0 8px var(--glow-gold))
+    drop-shadow(0 0 18px var(--glow-pink))
+    drop-shadow(0 0 8px var(--glow-purple))
     drop-shadow(1px 0 0 rgba(0, 240, 255, 0.3))
-    drop-shadow(-1px 0 0 rgba(255, 0, 245, 0.3));
+    drop-shadow(-1px 0 0 rgba(255, 110, 199, 0.3));
   transform: translateY(-1px);
+  animation: gradient-shift 2s ease-in-out infinite;
 }
 
 button {
@@ -65,19 +68,32 @@ button {
   -webkit-user-select: none;
   -o-user-select: none;
 
-  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-magenta) 70%);
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 50%, var(--accent-magenta) 100%);
+  background-size: 200% 200%;
   cursor: pointer;
-  border: none;
+  border: 2px solid transparent;
   -webkit-tap-highlight-color: transparent;
   transition: all 0.3s ease;
   color: var(--bg-primary);
   font-weight: 600;
   padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: 8px;
   position: relative;
   overflow: hidden;
-  /* Chromatic aberration prep */
-  filter: drop-shadow(0 0 0 transparent);
+  animation: button-gradient-shift 6s ease-in-out infinite;
+  box-shadow:
+    0 0 15px rgba(0, 240, 255, 0.3),
+    0 0 25px rgba(255, 0, 245, 0.2),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+@keyframes button-gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 button::before {
@@ -87,7 +103,7 @@ button::before {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
   transition: left 0.5s;
 }
 
@@ -96,20 +112,45 @@ button:hover::before {
 }
 
 button:hover, button:active {
-  background: var(--gradient-primary);
+  background: var(--gradient-holographic);
+  background-size: 200% 200%;
+  border-color: var(--accent-cyan);
   box-shadow:
-    0 0 20px var(--glow-cyan),
-    0 0 40px var(--glow-magenta),
-    0 0 30px var(--glow-gold),
-    rgba(0, 240, 255, 0.3) 0px 2px 4px 0px,
-    rgba(255, 0, 245, 0.2) 0px 4px 8px 0px;
-  transform: translateY(-2px);
+    0 0 25px var(--glow-cyan),
+    0 0 45px var(--glow-pink),
+    0 0 35px var(--glow-purple),
+    rgba(0, 240, 255, 0.4) 0px 2px 8px 0px,
+    rgba(255, 110, 199, 0.3) 0px 6px 12px 0px,
+    inset 0 0 30px rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px) scale(1.02);
   transition: all 0.3s ease;
+  animation: button-glow-pulse 1.5s ease-in-out infinite;
   /* Chromatic aberration effect */
   filter:
-    drop-shadow(2px 0 0 rgba(0, 240, 255, 0.4))
-    drop-shadow(-2px 0 0 rgba(255, 0, 245, 0.4))
-    drop-shadow(0 2px 0 rgba(255, 215, 0, 0.3));
+    drop-shadow(2px 0 0 rgba(0, 240, 255, 0.5))
+    drop-shadow(-2px 0 0 rgba(255, 110, 199, 0.5))
+    drop-shadow(0 2px 0 rgba(157, 0, 255, 0.4));
+}
+
+@keyframes button-glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 25px var(--glow-cyan),
+      0 0 45px var(--glow-pink),
+      0 0 35px var(--glow-purple),
+      rgba(0, 240, 255, 0.4) 0px 2px 8px 0px,
+      rgba(255, 110, 199, 0.3) 0px 6px 12px 0px,
+      inset 0 0 30px rgba(255, 255, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 30px var(--glow-cyan),
+      0 0 55px var(--glow-pink),
+      0 0 45px var(--glow-purple),
+      rgba(0, 240, 255, 0.5) 0px 2px 12px 0px,
+      rgba(255, 110, 199, 0.4) 0px 8px 16px 0px,
+      inset 0 0 40px rgba(255, 255, 255, 0.2);
+  }
 }
 
 .no-background {

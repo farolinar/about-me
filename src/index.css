@@ -17,6 +17,10 @@
   --accent-magenta: #C2008A;
   --accent-gold: #CC9900;
   --accent-orange: #E65C00;
+  --accent-pink: #E6007A;
+  --accent-purple: #8800CC;
+  --accent-teal: #00B8D4;
+  --accent-sunset: #FF9500;
 
   /* === INTERACTIVE STATES === */
   --state-hover: rgba(0, 153, 204, 0.08);
@@ -27,14 +31,21 @@
 
   /* === GRADIENTS === */
   --gradient-primary: linear-gradient(135deg, #0099CC 0%, #C2008A 50%, #CC9900 100%);
+  --gradient-vaporwave: linear-gradient(135deg, #E6007A 0%, #8800CC 25%, #0099CC 50%, #FF9500 75%, #C2008A 100%);
+  --gradient-sunset: linear-gradient(180deg, #E6007A 0%, #FF9500 50%, #8800CC 100%);
   --gradient-bg: linear-gradient(180deg, #F5F0FF 0%, #E8DBFF 50%, #D4C2F0 100%);
   --gradient-text: linear-gradient(135deg, #0099CC 0%, #C2008A 50%, #CC9900 100%);
+  --gradient-holographic: linear-gradient(135deg, #0099CC 0%, #E6007A 20%, #8800CC 40%, #00B8D4 60%, #FF9500 80%, #C2008A 100%);
 
   /* === GLOW EFFECTS === */
   --glow-cyan: rgba(0, 153, 204, 0.3);
   --glow-magenta: rgba(194, 0, 138, 0.3);
   --glow-gold: rgba(204, 153, 0, 0.25);
   --glow-white: rgba(0, 0, 0, 0.1);
+  --glow-pink: rgba(230, 0, 122, 0.3);
+  --glow-purple: rgba(136, 0, 204, 0.3);
+  --glow-teal: rgba(0, 184, 212, 0.25);
+  --glow-sunset: rgba(255, 149, 0, 0.25);
 
   /* Legacy compatibility (deprecated - use semantic tokens above) */
   --theme-shade-four: var(--bg-primary);
@@ -72,6 +83,10 @@
   --accent-magenta: #FF00F5;
   --accent-gold: #FFD700;
   --accent-orange: #FF6C00;
+  --accent-pink: #FF6EC7;
+  --accent-purple: #9D00FF;
+  --accent-teal: #0FF0FC;
+  --accent-sunset: #FFB627;
 
   /* === INTERACTIVE STATES === */
   --state-hover: rgba(0, 240, 255, 0.12);
@@ -82,14 +97,21 @@
 
   /* === GRADIENTS === */
   --gradient-primary: linear-gradient(135deg, #00F0FF 0%, #FF00F5 50%, #FFD700 100%);
+  --gradient-vaporwave: linear-gradient(135deg, #FF6EC7 0%, #9D00FF 25%, #00F0FF 50%, #FFB627 75%, #FF00F5 100%);
+  --gradient-sunset: linear-gradient(180deg, #FF6EC7 0%, #FFB627 50%, #9D00FF 100%);
   --gradient-bg: linear-gradient(180deg, #0D0221 0%, #1A0B2E 50%, #2D1B4E 100%);
   --gradient-text: linear-gradient(135deg, #00F0FF 0%, #FF00F5 50%, #FFD700 100%);
+  --gradient-holographic: linear-gradient(135deg, #00F0FF 0%, #FF6EC7 20%, #9D00FF 40%, #0FF0FC 60%, #FFB627 80%, #FF00F5 100%);
 
   /* === GLOW EFFECTS === */
   --glow-cyan: rgba(0, 240, 255, 0.5);
   --glow-magenta: rgba(255, 0, 245, 0.5);
   --glow-gold: rgba(255, 215, 0, 0.4);
   --glow-white: rgba(255, 255, 255, 0.3);
+  --glow-pink: rgba(255, 110, 199, 0.5);
+  --glow-purple: rgba(157, 0, 255, 0.5);
+  --glow-teal: rgba(15, 240, 252, 0.4);
+  --glow-sunset: rgba(255, 182, 39, 0.4);
 
   /* Legacy compatibility (deprecated - use semantic tokens above) */
   --theme-shade-four: var(--bg-primary);
@@ -147,7 +169,7 @@ body::before {
   pointer-events: none;
   z-index: 0;
   opacity: 0.04;
-  background-image:
+  /* background-image:
     repeating-linear-gradient(
       0deg,
       transparent,
@@ -155,7 +177,7 @@ body::before {
       var(--text-primary) 2px,
       var(--text-primary) 3px
     );
-  animation: scanline-drift 20s linear infinite;
+  animation: scanline-drift 20s linear infinite; */
 }
 
 /* Subtle grid overlay for retro computer aesthetic */
@@ -168,19 +190,59 @@ body::after {
   height: 100%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.03;
+  opacity: 0.04;
   background-image:
     repeating-linear-gradient(90deg, transparent, transparent 49px, var(--glow-cyan) 49px, var(--glow-cyan) 50px),
     repeating-linear-gradient(0deg, transparent, transparent 49px, var(--glow-magenta) 49px, var(--glow-magenta) 50px);
   animation: grid-pulse 8s ease-in-out infinite;
 }
 
-@keyframes grid-pulse {
+/* Enhanced vaporwave grid pattern - perspective grid effect */
+#root::before {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.08;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      var(--accent-pink) 39px,
+      var(--accent-pink) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      var(--accent-purple) 39px,
+      var(--accent-purple) 40px
+    );
+  transform: perspective(500px) rotateX(60deg);
+  transform-origin: center top;
+  animation: grid-shift 20s ease-in-out infinite;
+}
+
+@keyframes grid-shift {
   0%, 100% {
-    opacity: 0.03;
+    transform: perspective(500px) rotateX(60deg) translateY(0);
   }
   50% {
-    opacity: 0.05;
+    transform: perspective(500px) rotateX(60deg) translateY(-5px);
+  }
+}
+
+@keyframes grid-pulse {
+  0%, 100% {
+    opacity: 0.04;
+  }
+  50% {
+    opacity: 0.07;
   }
 }
 
@@ -200,24 +262,58 @@ body > * {
 
 h1, h2 {
   font-weight: 600;
-  background: var(--gradient-text);
+  background: var(--gradient-holographic);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-shadow: 0 0 30px var(--glow-cyan), 0 0 50px var(--glow-magenta);
-  filter: drop-shadow(0 0 20px var(--glow-cyan)) drop-shadow(0 0 30px var(--glow-magenta));
-  animation: heading-glow-cycle 6s ease-in-out infinite;
+  background-size: 200% 200%;
+  animation: heading-glow-cycle 8s ease-in-out infinite, gradient-shift 6s ease-in-out infinite;
+  position: relative;
+}
+
+/* Enhanced chromatic aberration effect for headings */
+h1::before,
+h2::before {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-holographic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  z-index: -1;
+  opacity: 0.7;
+  filter: blur(2px);
+  text-shadow:
+    2px 0 3px var(--glow-cyan),
+    -2px 0 3px var(--glow-pink),
+    0 2px 3px var(--glow-purple);
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 @keyframes heading-glow-cycle {
   0%, 100% {
-    filter: drop-shadow(0 0 20px var(--glow-cyan)) drop-shadow(0 0 30px var(--glow-magenta));
+    filter: drop-shadow(0 0 20px var(--glow-cyan)) drop-shadow(0 0 30px var(--glow-magenta)) drop-shadow(0 0 15px var(--glow-pink));
   }
-  33% {
-    filter: drop-shadow(0 0 25px var(--glow-magenta)) drop-shadow(0 0 35px var(--glow-gold));
+  25% {
+    filter: drop-shadow(0 0 25px var(--glow-magenta)) drop-shadow(0 0 35px var(--glow-purple)) drop-shadow(0 0 20px var(--glow-teal));
   }
-  66% {
-    filter: drop-shadow(0 0 25px var(--glow-gold)) drop-shadow(0 0 35px var(--glow-cyan));
+  50% {
+    filter: drop-shadow(0 0 25px var(--glow-purple)) drop-shadow(0 0 35px var(--glow-teal)) drop-shadow(0 0 20px var(--glow-sunset));
+  }
+  75% {
+    filter: drop-shadow(0 0 25px var(--glow-teal)) drop-shadow(0 0 35px var(--glow-sunset)) drop-shadow(0 0 20px var(--glow-cyan));
   }
 }
 
@@ -239,6 +335,125 @@ h3, h4, h5 {
 
 p {
   font-weight: 400;
+}
+
+/* === VAPORWAVE SPECIAL EFFECTS === */
+
+/* Glitch effect for accent elements */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+  animation: glitch-skew 3s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--accent-cyan);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim 2s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--accent-magenta), 2px 2px var(--accent-purple);
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(17px, 9999px, 94px, 0);
+  }
+  10% {
+    clip: rect(82px, 9999px, 40px, 0);
+  }
+  20% {
+    clip: rect(29px, 9999px, 83px, 0);
+  }
+  30% {
+    clip: rect(56px, 9999px, 15px, 0);
+  }
+  40% {
+    clip: rect(74px, 9999px, 69px, 0);
+  }
+  50% {
+    clip: rect(3px, 9999px, 99px, 0);
+  }
+  60% {
+    clip: rect(91px, 9999px, 32px, 0);
+  }
+  70% {
+    clip: rect(45px, 9999px, 77px, 0);
+  }
+  80% {
+    clip: rect(12px, 9999px, 61px, 0);
+  }
+  90% {
+    clip: rect(88px, 9999px, 24px, 0);
+  }
+  100% {
+    clip: rect(54px, 9999px, 48px, 0);
+  }
+}
+
+@keyframes glitch-skew {
+  0% {
+    transform: skew(0deg);
+  }
+  10% {
+    transform: skew(-0.5deg);
+  }
+  20% {
+    transform: skew(0.5deg);
+  }
+  30% {
+    transform: skew(0deg);
+  }
+  40% {
+    transform: skew(0.3deg);
+  }
+  50% {
+    transform: skew(-0.3deg);
+  }
+  60% {
+    transform: skew(0deg);
+  }
+  70% {
+    transform: skew(-0.2deg);
+  }
+  80% {
+    transform: skew(0.2deg);
+  }
+  90% {
+    transform: skew(0deg);
+  }
+  100% {
+    transform: skew(0deg);
+  }
+}
+
+/* Holographic text effect */
+.holographic-text {
+  background: var(--gradient-holographic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease-in-out infinite;
+  filter:
+    drop-shadow(0 0 10px var(--glow-cyan))
+    drop-shadow(0 0 15px var(--glow-pink))
+    drop-shadow(0 0 8px var(--glow-purple));
 }
 
 code {

@@ -7,6 +7,7 @@
     width: 500px;
     background: linear-gradient(135deg, rgba(13, 2, 33, 0.6) 0%, rgba(26, 11, 46, 0.4) 100%);
     border-radius: 15px;
+    overflow: hidden;
 
     -ms-transform: translateY(100%); /* IE 9 */
     -webkit-transform: translateY(100%); /* Safari */
@@ -58,14 +59,14 @@
         font-weight: bold;
         font-size: 18px;
         color: var(--text-primary);
-        text-shadow: 0 0 10px var(--glow-cyan);
+        text-shadow: 0 0 5px var(--glow-cyan);
     }
 
     .place {
         font-weight: 600;
         font-size: 14px;
         color: var(--text-accent);
-        text-shadow: 0 0 8px var(--glow-magenta);
+        text-shadow: 0 0 4px var(--glow-magenta);
     }
 
     .time {
@@ -88,7 +89,7 @@
             margin-right: 15px;
             font-weight: 600;
             color: var(--text-accent);
-            text-shadow: 0 0 8px var(--glow-magenta);
+            text-shadow: 0 0 4px var(--glow-magenta);
         }
 
         .skill {
@@ -104,33 +105,80 @@
     inset: 0;
     border-radius: 15px;
     border: 2px solid transparent;
-    background: var(--gradient-primary) border-box;
+    background: linear-gradient(135deg, #00F0FF 0%, #9D00FF 50%, #FF6EC7 100%) border-box;
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
-    filter: drop-shadow(0 0 12px var(--glow-cyan)) drop-shadow(0 0 18px var(--glow-magenta)) drop-shadow(0 0 8px var(--glow-gold));
-    animation: border-glow 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 5px var(--glow-cyan)) drop-shadow(0 0 6px var(--glow-purple)) drop-shadow(0 0 4px var(--glow-pink));
+    animation: border-glow-enhanced 4s ease-in-out infinite;
 }
 
-@keyframes border-glow {
-    0%, 100% {
-        filter: drop-shadow(0 0 12px var(--glow-cyan)) drop-shadow(0 0 18px var(--glow-magenta)) drop-shadow(0 0 8px var(--glow-gold));
+/* Holographic shine overlay */
+.experience-card-outer::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 110, 199, 0.1) 40%,
+        rgba(157, 0, 255, 0.12) 50%,
+        rgba(0, 240, 255, 0.1) 60%,
+        transparent 70%
+    );
+    transform: rotate(45deg);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.experience-card-outer:hover::after {
+    animation: holographic-shine 2s ease-in-out;
+}
+
+@keyframes holographic-shine {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%) rotate(45deg);
     }
     50% {
-        filter: drop-shadow(0 0 18px var(--glow-cyan)) drop-shadow(0 0 28px var(--glow-magenta)) drop-shadow(0 0 15px var(--glow-gold));
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+@keyframes border-glow-enhanced {
+    0%, 100% {
+        filter: drop-shadow(0 0 5px var(--glow-cyan)) drop-shadow(0 0 6px var(--glow-purple)) drop-shadow(0 0 4px var(--glow-pink));
+    }
+    33% {
+        filter: drop-shadow(0 0 6px var(--glow-purple)) drop-shadow(0 0 8px var(--glow-pink)) drop-shadow(0 0 5px var(--glow-cyan));
+    }
+    66% {
+        filter: drop-shadow(0 0 6px var(--glow-pink)) drop-shadow(0 0 8px var(--glow-cyan)) drop-shadow(0 0 5px var(--glow-purple));
     }
 }
 
 .experience-card-outer:hover {
-    background: linear-gradient(135deg, rgba(13, 2, 33, 0.8) 0%, rgba(26, 11, 46, 0.6) 100%);
-    transform: translateY(-5px);
+    background: linear-gradient(135deg, rgba(13, 2, 33, 0.85) 0%, rgba(45, 27, 78, 0.65) 50%, rgba(26, 11, 46, 0.75) 100%);
+    transform: translateY(-8px);
     transition: all 0.3s ease;
+    box-shadow:
+        0 0 15px rgba(0, 240, 255, 0.18),
+        0 0 25px rgba(255, 0, 245, 0.12),
+        0 20px 40px rgba(0, 0, 0, 0.4);
     /* Enhanced chromatic aberration on hover */
     filter:
-        drop-shadow(3px 0 0 rgba(0, 240, 255, 0.3))
-        drop-shadow(-3px 0 0 rgba(255, 0, 245, 0.3))
-        drop-shadow(0 3px 0 rgba(255, 215, 0, 0.2));
+        drop-shadow(4px 0 0 rgba(0, 240, 255, 0.35))
+        drop-shadow(-4px 0 0 rgba(255, 110, 199, 0.35))
+        drop-shadow(0 4px 0 rgba(157, 0, 255, 0.25));
 }
 
 /* minimum iPads (portrait and landscape)  */
