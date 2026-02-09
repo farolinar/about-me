@@ -1520,6 +1520,44 @@ background-clip: text;
 
 ---
 
+### 3.12 Vaporwave Window Frame (Component)
+
+**Usage:** Generic container for creating "popup window" aesthetics. Ideal for cards, modals, or focused content sections.
+
+**Component Path:** `src/components/VaporwaveWindow/VaporwaveWindow.jsx`
+
+#### Usage
+```jsx
+import VaporwaveWindow from '.../VaporwaveWindow/VaporwaveWindow';
+
+// Basic Usage
+<VaporwaveWindow title="📂 MY_WINDOW.exe">
+    <div className="my-content">
+        {/* Content goes here */}
+    </div>
+</VaporwaveWindow>
+
+// Custom Styling
+<VaporwaveWindow 
+    title="🚫 ERROR.log" 
+    className="custom-window-class"
+    style={{ width: '400px' }}
+>
+    <p>Operation failed successfully.</p>
+</VaporwaveWindow>
+```
+
+#### CSS Customization
+The component accepts `className` and standard props. The inner structure uses:
+- `.vaporwave-window`: Outer container (flex column)
+- `.window-header`: Top bar with controls
+- `.window-content`: Main content area (scrollable, flex-1, padded)
+
+To override internal styles, target these classes within your custom parent class.
+
+
+---
+
 ## 13. Summary
 
 ### 13.1 What You've Achieved

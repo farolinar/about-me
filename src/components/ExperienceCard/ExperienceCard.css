@@ -1,15 +1,14 @@
 .experience-card-outer {
     position: relative;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     width: 500px;
-    background: var(--bg-surface);
-    border-radius: 15px;
-    overflow: hidden;
-
+    height: 100%; /* Ensure it fills the VaporwaveWindow flex container if needed, though VaporwaveWindow is the container now. */
+    
+    /* Animation & Layout specific to Experience Card */
     -ms-transform: translateY(100%); /* IE 9 */
+    -webkit-transform: translateY(100%); /* Safari */
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.4s;
     -webkit-transform: translateY(100%); /* Safari */
     transform: translateY(100%);
     opacity: 0;
@@ -30,9 +29,10 @@
         font-style: normal;
     }
 
+    /* Content Styles within the window */
     .head {
         display: flex;
-
+        
         .image {
             position: relative;
             width: 70px;
@@ -99,102 +99,14 @@
     }
 }
 
-.experience-card-outer::before{
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 15px;
-    border: 2px solid transparent;
-    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%) border-box;
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    filter: drop-shadow(0 0 5px var(--glow-cyan)) drop-shadow(0 0 6px var(--glow-purple)) drop-shadow(0 0 4px var(--glow-pink));
-    animation: border-glow-enhanced 4s ease-in-out infinite;
-}
-
-/* Holographic shine overlay */
-.experience-card-outer::after {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent 30%,
-        var(--glow-pink) 40%,
-        var(--glow-purple) 50%,
-        var(--glow-cyan) 60%,
-        transparent 70%
-    );
-    transform: rotate(45deg);
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.experience-card-outer:hover::after {
-    animation: holographic-shine 4s ease-in-out;
-}
-
-@keyframes holographic-shine {
-    0% {
-        opacity: 0;
-        transform: translateX(-100%) rotate(45deg);
-    }
-    50% {
-        opacity: 0.3;
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(100%) rotate(45deg);
-    }
-}
-
-@keyframes border-glow-enhanced {
-    0%, 100% {
-        filter: drop-shadow(0 0 5px var(--glow-cyan)) drop-shadow(0 0 6px var(--glow-purple)) drop-shadow(0 0 4px var(--glow-pink));
-    }
-    33% {
-        filter: drop-shadow(0 0 6px var(--glow-purple)) drop-shadow(0 0 8px var(--glow-pink)) drop-shadow(0 0 5px var(--glow-cyan));
-    }
-    66% {
-        filter: drop-shadow(0 0 6px var(--glow-pink)) drop-shadow(0 0 8px var(--glow-cyan)) drop-shadow(0 0 5px var(--glow-purple));
-    }
-}
-
-/* Dark theme hover effect (default - subtle and refined) */
+/* Dark theme hover effect (managed by Vaporwave Window mainly, but keeping specific lift if needed) */
 :root .experience-card-outer:hover,
 :root.dark .experience-card-outer:hover {
-    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 50%, var(--bg-secondary) 100%);
     transform: translateY(-8px);
-    transition: all 0.3s ease;
-    box-shadow:
-        0 0 8px var(--glow-cyan),
-        0 0 12px var(--glow-magenta),
-        0 15px 30px var(--glow-white);
-    /* Subtle chromatic aberration on hover */
-    filter:
-        drop-shadow(2px 0 0 var(--glow-cyan))
-        drop-shadow(-2px 0 0 var(--glow-pink))
-        drop-shadow(0 2px 0 var(--glow-purple));
 }
 
-/* Light theme hover effect (subtle and professional) */
-:root.light .experience-card-outer:hover {
-    box-shadow:
-        0 0 8px var(--glow-cyan),
-        0 0 12px var(--glow-magenta),
-        0 15px 30px var(--glow-white);
-    /* Subtle chromatic aberration for light theme */
-    filter:
-        drop-shadow(2px 0 0 var(--glow-cyan))
-        drop-shadow(-2px 0 0 var(--glow-pink))
-        drop-shadow(0 2px 0 var(--glow-purple));
-}
+/* Light theme hover effect */
+/* Styles inherited from VaporwaveWindow */
 
 /* minimum iPads (portrait and landscape)  */
 @media only screen and (max-device-width: 1024px) {
