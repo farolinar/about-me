@@ -142,6 +142,10 @@
         font-size: 20px;
         text-align: center;
     }
+
+    .about-outer .section.visual {
+        display: none;
+    }
 }
 
 /* iPads (portrait and landscape)  */
