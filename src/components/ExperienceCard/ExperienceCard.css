@@ -5,7 +5,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 500px;
-    background: linear-gradient(135deg, rgba(13, 2, 33, 0.6) 0%, rgba(26, 11, 46, 0.4) 100%);
+    background: var(--bg-surface);
     border-radius: 15px;
     overflow: hidden;
 
@@ -105,7 +105,7 @@
     inset: 0;
     border-radius: 15px;
     border: 2px solid transparent;
-    background: linear-gradient(135deg, #00F0FF 0%, #9D00FF 50%, #FF6EC7 100%) border-box;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-purple) 50%, var(--accent-pink) 100%) border-box;
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -125,9 +125,9 @@
     background: linear-gradient(
         45deg,
         transparent 30%,
-        rgba(255, 110, 199, 0.1) 40%,
-        rgba(157, 0, 255, 0.12) 50%,
-        rgba(0, 240, 255, 0.1) 60%,
+        var(--glow-pink) 40%,
+        var(--glow-purple) 50%,
+        var(--glow-cyan) 60%,
         transparent 70%
     );
     transform: rotate(45deg);
@@ -137,7 +137,7 @@
 }
 
 .experience-card-outer:hover::after {
-    animation: holographic-shine 2s ease-in-out;
+    animation: holographic-shine 4s ease-in-out;
 }
 
 @keyframes holographic-shine {
@@ -146,7 +146,7 @@
         transform: translateX(-100%) rotate(45deg);
     }
     50% {
-        opacity: 1;
+        opacity: 0.3;
     }
     100% {
         opacity: 0;
@@ -166,19 +166,34 @@
     }
 }
 
-.experience-card-outer:hover {
-    background: linear-gradient(135deg, rgba(13, 2, 33, 0.85) 0%, rgba(45, 27, 78, 0.65) 50%, rgba(26, 11, 46, 0.75) 100%);
+/* Dark theme hover effect (default - subtle and refined) */
+:root .experience-card-outer:hover,
+:root.dark .experience-card-outer:hover {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-tertiary) 50%, var(--bg-secondary) 100%);
     transform: translateY(-8px);
     transition: all 0.3s ease;
     box-shadow:
-        0 0 15px rgba(0, 240, 255, 0.18),
-        0 0 25px rgba(255, 0, 245, 0.12),
-        0 20px 40px rgba(0, 0, 0, 0.4);
-    /* Enhanced chromatic aberration on hover */
+        0 0 8px var(--glow-cyan),
+        0 0 12px var(--glow-magenta),
+        0 15px 30px var(--glow-white);
+    /* Subtle chromatic aberration on hover */
     filter:
-        drop-shadow(4px 0 0 rgba(0, 240, 255, 0.35))
-        drop-shadow(-4px 0 0 rgba(255, 110, 199, 0.35))
-        drop-shadow(0 4px 0 rgba(157, 0, 255, 0.25));
+        drop-shadow(2px 0 0 var(--glow-cyan))
+        drop-shadow(-2px 0 0 var(--glow-pink))
+        drop-shadow(0 2px 0 var(--glow-purple));
+}
+
+/* Light theme hover effect (subtle and professional) */
+:root.light .experience-card-outer:hover {
+    box-shadow:
+        0 0 8px var(--glow-cyan),
+        0 0 12px var(--glow-magenta),
+        0 15px 30px var(--glow-white);
+    /* Subtle chromatic aberration for light theme */
+    filter:
+        drop-shadow(2px 0 0 var(--glow-cyan))
+        drop-shadow(-2px 0 0 var(--glow-pink))
+        drop-shadow(0 2px 0 var(--glow-purple));
 }
 
 /* minimum iPads (portrait and landscape)  */

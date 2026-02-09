@@ -47,6 +47,11 @@
   --glow-teal: rgba(0, 184, 212, 0.25);
   --glow-sunset: rgba(255, 149, 0, 0.25);
 
+  /* === AMBIENT GLOW EFFECTS (Saturated for light backgrounds) === */
+  --ambient-cyan: rgba(0, 200, 255, 0.35);
+  --ambient-magenta: rgba(255, 0, 200, 0.35);
+  --ambient-gold: rgba(255, 180, 0, 0.3);
+
   /* Legacy compatibility (deprecated - use semantic tokens above) */
   --theme-shade-four: var(--bg-primary);
   --theme-shade-three: var(--bg-secondary);

@@ -23,7 +23,9 @@
     }
 }
 
-.page.main::before {
+/* Dark theme vaporwave-wave (default) */
+:root .page.main::before,
+:root.dark .page.main::before {
     content: "";
     position: absolute;
     top: 0;
@@ -36,10 +38,20 @@
         radial-gradient(ellipse at 50% 90%, var(--glow-gold) 0%, transparent 35%);
     opacity: 0.1;
     pointer-events: none;
-    animation: vaporwave-wave 20s ease-in-out infinite;
+    animation: vaporwave-wave-dark 20s ease-in-out infinite;
 }
 
-@keyframes vaporwave-wave {
+/* Light theme vaporwave-wave (more visible with saturated colors) */
+:root.light .page.main::before {
+    background:
+        radial-gradient(ellipse at 30% 20%, var(--ambient-cyan) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, var(--ambient-magenta) 0%, transparent 55%),
+        radial-gradient(ellipse at 50% 90%, var(--ambient-gold) 0%, transparent 45%);
+    animation: vaporwave-wave-light 20s ease-in-out infinite;
+}
+
+/* Dark theme animation - subtle */
+@keyframes vaporwave-wave-dark {
     0% {
         opacity: 0.15;
         transform: translateY(0) scale(1);
@@ -62,6 +74,35 @@
     }
     100% {
         opacity: 0.15;
+        transform: translateY(0) scale(1);
+        background-position: 0% 0%, 100% 0%, 50% 100%;
+    }
+}
+
+/* Light theme animation - more visible */
+@keyframes vaporwave-wave-light {
+    0% {
+        opacity: 0.4;
+        transform: translateY(0) scale(1);
+        background-position: 0% 0%, 100% 0%, 50% 100%;
+    }
+    25% {
+        opacity: 0.7;
+        transform: translateY(-8%) scale(1.08);
+        background-position: 30% 40%, 90% 30%, 20% 70%;
+    }
+    50% {
+        opacity: 0.55;
+        transform: translateY(-12%) scale(1.12);
+        background-position: 60% 70%, 40% 60%, 10% 40%;
+    }
+    75% {
+        opacity: 0.7;
+        transform: translateY(-8%) scale(1.08);
+        background-position: 80% 40%, 20% 80%, 70% 90%;
+    }
+    100% {
+        opacity: 0.4;
         transform: translateY(0) scale(1);
         background-position: 0% 0%, 100% 0%, 50% 100%;
     }
@@ -103,7 +144,9 @@
     }
 }
 
-.page.last::before {
+/* Dark theme last page glow (default) */
+:root .page.last::before,
+:root.dark .page.last::before {
     content: "";
     position: absolute;
     top: 0;
@@ -114,6 +157,11 @@
                 radial-gradient(circle at 60% 40%, var(--glow-cyan) 0%, transparent 50%);
     opacity: 0.05;
     pointer-events: none;
+}
+
+/* Light theme last page glow (more visible) */
+:root.light .page.last::before {
+    opacity: 0.2;
 }
 
  /* minimum iPads (portrait and landscape)  */

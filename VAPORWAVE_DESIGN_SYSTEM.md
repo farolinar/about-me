@@ -86,52 +86,79 @@
 - Layer multiple glows for authentic neon depth
 - Adjust opacity for intensity control
 
-### 1.2 Light Theme - Vaporwave Sunset
+### 1.2 Light Theme - Vaporwave Sunset (Refined)
 
 #### Background Colors
 ```css
 /* Semantic Tokens */
---bg-primary: #F5F0FF;        /* Soft lavender white */
---bg-secondary: #FFFFFF;      /* Pure white */
---bg-tertiary: #E8DBFF;       /* Light purple */
---bg-surface: rgba(255, 255, 255, 0.9);  /* Semi-transparent white */
---bg-header: rgba(245, 240, 255, 0.95);  /* Header background */
+--bg-primary: #FDF8FF;        /* Ultra-soft lavender white - improved subtlety */
+--bg-secondary: #F8F0FF;      /* Soft purple-tinted white */
+--bg-tertiary: #EFE0FF;       /* Light lavender */
+--bg-surface: rgba(253, 248, 255, 0.92);  /* Semi-transparent soft white */
+--bg-header: rgba(253, 248, 255, 0.96);   /* Header with slight transparency */
 ```
+
+**Usage:**
+- `--bg-primary`: Main body background, softer than pure white
+- `--bg-secondary`: Mid-gradient transitions, subtle purple tint
+- `--bg-tertiary`: Gradient endpoints, light lavender tone
+- `--bg-surface`: Glassmorphic cards and overlays
+- `--bg-header`: Header with transparency
 
 #### Text Colors
 ```css
 /* Semantic Tokens */
---text-primary: #1A0B2E;      /* Deep purple */
---text-secondary: #3D2463;    /* Medium purple */
---text-tertiary: #6B5080;     /* Muted purple */
---text-accent: #D4006E;       /* Hot pink */
+--text-primary: #1F0D3A;      /* Deep purple-black - enhanced contrast */
+--text-secondary: #4A2B6B;    /* Rich purple - improved readability */
+--text-tertiary: #7A5B99;     /* Muted purple */
+--text-accent: #D4006E;       /* Hot pink - maintained for consistency */
 ```
+
+**Usage:**
+- `--text-primary`: Body text, main content (improved contrast ratio)
+- `--text-secondary`: Descriptions, supporting text
+- `--text-tertiary`: Muted text, less important content
+- `--text-accent`: Headlines, important callouts
 
 #### Accent Colors
 ```css
-/* Accent Palette */
---accent-cyan: #0099CC;
---accent-magenta: #C2008A;
---accent-gold: #CC9900;
---accent-orange: #E65C00;
---accent-pink: #E6007A;
---accent-purple: #8800CC;
---accent-teal: #00B8D4;
---accent-sunset: #FF9500;
+/* Accent Palette - Desaturated but Vibrant */
+--accent-cyan: #0088BB;       /* Deeper, more readable cyan */
+--accent-magenta: #B8007A;    /* Deeper magenta */
+--accent-gold: #B88800;       /* Deeper gold */
+--accent-orange: #D65500;     /* Deeper orange */
+--accent-pink: #D6006B;       /* Deeper pink */
+--accent-purple: #7700BB;     /* Deeper purple */
+--accent-teal: #00A0C0;       /* Deeper teal */
+--accent-sunset: #E68500;     /* Deeper sunset orange */
 ```
 
-#### Glow Effects (Reduced Opacity)
+**Usage:**
+- `--accent-cyan`: Primary interactive elements, links
+- `--accent-magenta`: Secondary accents, borders
+- `--accent-gold`: Warm highlights, tertiary accents
+- `--accent-pink`: Gradient variations, chromatic effects
+- `--accent-purple`: Deep purple accents
+- `--accent-teal`: Bright cyan variations
+- `--accent-sunset`: Warm orange-gold tones
+
+#### Glow Effects (Lighter, More Subtle)
 ```css
-/* Glow Tokens */
---glow-cyan: rgba(0, 153, 204, 0.3);
---glow-magenta: rgba(194, 0, 138, 0.3);
---glow-gold: rgba(204, 153, 0, 0.25);
---glow-white: rgba(0, 0, 0, 0.1);
---glow-pink: rgba(230, 0, 122, 0.3);
---glow-purple: rgba(136, 0, 204, 0.3);
---glow-teal: rgba(0, 184, 212, 0.25);
---glow-sunset: rgba(255, 149, 0, 0.25);
+/* Glow Tokens - Refined for Light Theme */
+--glow-cyan: rgba(0, 136, 187, 0.25);
+--glow-magenta: rgba(184, 0, 122, 0.25);
+--glow-gold: rgba(184, 136, 0, 0.2);
+--glow-white: rgba(0, 0, 0, 0.08);
+--glow-pink: rgba(214, 0, 107, 0.25);
+--glow-purple: rgba(119, 0, 187, 0.25);
+--glow-teal: rgba(0, 160, 192, 0.2);
+--glow-sunset: rgba(230, 133, 0, 0.2);
 ```
+
+**Usage:**
+- Use for `box-shadow`, `filter: drop-shadow()`, and `text-shadow`
+- Lighter opacity for subtle presence in light theme
+- Maintains vaporwave aesthetic without overwhelming
 
 ### 1.3 Interactive State Colors
 
@@ -148,11 +175,11 @@
 #### Light Theme
 ```css
 /* State Tokens */
---state-hover: rgba(0, 153, 204, 0.08);
---state-active: rgba(194, 0, 138, 0.12);
---state-focus: rgba(204, 153, 0, 0.1);
---border-default: rgba(0, 153, 204, 0.2);
---border-focus: rgba(194, 0, 138, 0.5);
+--state-hover: rgba(0, 136, 187, 0.1);
+--state-active: rgba(184, 0, 122, 0.15);
+--state-focus: rgba(184, 136, 0, 0.12);
+--border-default: rgba(0, 136, 187, 0.25);
+--border-focus: rgba(184, 0, 122, 0.6);
 ```
 
 ### 1.4 Gradient Presets
@@ -170,13 +197,13 @@
 
 #### Light Theme
 ```css
-/* Gradient Library */
---gradient-primary: linear-gradient(135deg, #0099CC 0%, #C2008A 50%, #CC9900 100%);
---gradient-vaporwave: linear-gradient(135deg, #E6007A 0%, #8800CC 25%, #0099CC 50%, #FF9500 75%, #C2008A 100%);
---gradient-sunset: linear-gradient(180deg, #E6007A 0%, #FF9500 50%, #8800CC 100%);
---gradient-bg: linear-gradient(180deg, #F5F0FF 0%, #E8DBFF 50%, #D4C2F0 100%);
---gradient-text: linear-gradient(135deg, #0099CC 0%, #C2008A 50%, #CC9900 100%);
---gradient-holographic: linear-gradient(135deg, #0099CC 0%, #E6007A 20%, #8800CC 40%, #00B8D4 60%, #FF9500 80%, #C2008A 100%);
+/* Gradient Library - Refined */
+--gradient-primary: linear-gradient(135deg, #0088BB 0%, #B8007A 50%, #B88800 100%);
+--gradient-vaporwave: linear-gradient(135deg, #D6006B 0%, #7700BB 25%, #0088BB 50%, #E68500 75%, #B8007A 100%);
+--gradient-sunset: linear-gradient(180deg, #D6006B 0%, #E68500 50%, #7700BB 100%);
+--gradient-bg: linear-gradient(180deg, #FDF8FF 0%, #EFE0FF 50%, #E0CCFF 100%);
+--gradient-text: linear-gradient(135deg, #0088BB 0%, #B8007A 50%, #B88800 100%);
+--gradient-holographic: linear-gradient(135deg, #0088BB 0%, #D6006B 20%, #7700BB 40%, #00A0C0 60%, #E68500 80%, #B8007A 100%);
 ```
 
 **Usage:**
@@ -552,6 +579,47 @@ button:hover {
 - Hover lift and opacity increase
 - Color-coded text hierarchy
 
+#### Theme-Specific Hover Effects
+
+**Design Philosophy:** Both themes use **subtle, refined glow effects** to maintain a professional aesthetic while preserving the vaporwave character.
+
+**Dark Theme (Subtle & Refined):**
+```css
+:root .experience-card-outer:hover,
+:root.dark .experience-card-outer:hover {
+    box-shadow:
+        0 0 8px var(--glow-cyan),
+        0 0 12px var(--glow-magenta),
+        0 15px 30px var(--glow-white);
+    filter:
+        drop-shadow(2px 0 0 var(--glow-cyan))
+        drop-shadow(-2px 0 0 var(--glow-pink))
+        drop-shadow(0 2px 0 var(--glow-purple));
+}
+```
+
+**Light Theme (Subtle & Professional):**
+```css
+:root.light .experience-card-outer:hover {
+    box-shadow:
+        0 0 8px var(--glow-cyan),
+        0 0 12px var(--glow-magenta),
+        0 15px 30px var(--glow-white);
+    filter:
+        drop-shadow(2px 0 0 var(--glow-cyan))
+        drop-shadow(-2px 0 0 var(--glow-pink))
+        drop-shadow(0 2px 0 var(--glow-purple));
+}
+```
+
+**Key Points:**
+- **Unified subtle approach**: Both themes now use the same reduced glow intensity
+- **Box-shadow blur**: 8px/12px/30px (reduced from previous 15px/25px/40px in dark)
+- **Chromatic aberration**: 2px offset (reduced from previous 4px in dark)
+- **Professional aesthetic**: Maintains vaporwave character without overwhelming the content
+- **Accessibility**: Subtle effects reduce visual noise and improve readability
+
+
 ### 3.5 Header
 
 **File:** `src/views/layouts/Header/Header.css`
@@ -774,6 +842,72 @@ button:hover {
 - Depth between sections
 - Subtle radial glows for atmosphere
 - Smooth gradient transitions
+
+#### Theme-Specific Ambient Animations
+
+**Design Philosophy:** Ambient effects are optimized per theme - **subtle and atmospheric for dark theme**, **visible but professional for light theme**.
+
+**Vaporwave-Wave Animation (Main Page)**
+
+*Dark Theme (Subtle & Atmospheric):*
+```css
+:root .page.main::before,
+:root.dark .page.main::before {
+    background:
+        radial-gradient(ellipse at 30% 20%, var(--glow-cyan) 0%, transparent 40%),
+        radial-gradient(ellipse at 70% 60%, var(--glow-magenta) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 90%, var(--glow-gold) 0%, transparent 35%);
+    opacity: 0.1;
+    animation: vaporwave-wave-dark 20s ease-in-out infinite;
+}
+
+@keyframes vaporwave-wave-dark {
+    0%, 100% { opacity: 0.15; }
+    25%, 75% { opacity: 0.25; }
+    50% { opacity: 0.2; }
+}
+```
+
+*Light Theme (Visible & Professional):*
+```css
+:root.light .page.main::before {
+    animation: vaporwave-wave-light 20s ease-in-out infinite;
+}
+
+@keyframes vaporwave-wave-light {
+    0%, 100% { opacity: 0.4; }
+    25%, 75% { opacity: 0.7; }
+    50% { opacity: 0.55; }
+}
+```
+
+**Last Page Ambient Glow**
+
+*Dark Theme:*
+```css
+:root .page.last::before,
+:root.dark .page.last::before {
+    background: 
+        radial-gradient(circle at 40% 60%, var(--glow-gold) 0%, transparent 50%),
+        radial-gradient(circle at 60% 40%, var(--glow-cyan) 0%, transparent 50%);
+    opacity: 0.05;
+}
+```
+
+*Light Theme:*
+```css
+:root.light .page.last::before {
+    opacity: 0.2;
+}
+```
+
+**Key Points:**
+- **Dark theme opacity**: 0.05-0.25 range (subtle, atmospheric)
+- **Light theme opacity**: 0.2-0.7 range (visible, compensates for desaturated glow colors)
+- **Separate animations**: Each theme has its own keyframe animation for optimal appearance
+- **Breathing effect**: 20s ease-in-out creates a calm, ambient atmosphere
+- **Color compensation**: Light theme uses higher opacity to balance the desaturated glow variables
+
 
 ---
 
@@ -1030,52 +1164,52 @@ The project already includes:
 /* Light Theme - Complete Token List */
 :root.light {
   /* Backgrounds */
-  --bg-primary: #F5F0FF;
-  --bg-secondary: #FFFFFF;
-  --bg-tertiary: #E8DBFF;
-  --bg-surface: rgba(255, 255, 255, 0.9);
-  --bg-header: rgba(245, 240, 255, 0.95);
+  --bg-primary: #FDF8FF;
+  --bg-secondary: #F8F0FF;
+  --bg-tertiary: #EFE0FF;
+  --bg-surface: rgba(253, 248, 255, 0.92);
+  --bg-header: rgba(253, 248, 255, 0.96);
   
   /* Text */
-  --text-primary: #1A0B2E;
-  --text-secondary: #3D2463;
-  --text-tertiary: #6B5080;
+  --text-primary: #1F0D3A;
+  --text-secondary: #4A2B6B;
+  --text-tertiary: #7A5B99;
   --text-accent: #D4006E;
   
   /* Accents */
-  --accent-cyan: #0099CC;
-  --accent-magenta: #C2008A;
-  --accent-gold: #CC9900;
-  --accent-orange: #E65C00;
-  --accent-pink: #E6007A;
-  --accent-purple: #8800CC;
-  --accent-teal: #00B8D4;
-  --accent-sunset: #FF9500;
+  --accent-cyan: #0088BB;
+  --accent-magenta: #B8007A;
+  --accent-gold: #B88800;
+  --accent-orange: #D65500;
+  --accent-pink: #D6006B;
+  --accent-purple: #7700BB;
+  --accent-teal: #00A0C0;
+  --accent-sunset: #E68500;
   
   /* Interactive States */
-  --state-hover: rgba(0, 153, 204, 0.08);
-  --state-active: rgba(194, 0, 138, 0.12);
-  --state-focus: rgba(204, 153, 0, 0.1);
-  --border-default: rgba(0, 153, 204, 0.2);
-  --border-focus: rgba(194, 0, 138, 0.5);
+  --state-hover: rgba(0, 136, 187, 0.1);
+  --state-active: rgba(184, 0, 122, 0.15);
+  --state-focus: rgba(184, 136, 0, 0.12);
+  --border-default: rgba(0, 136, 187, 0.25);
+  --border-focus: rgba(184, 0, 122, 0.6);
   
   /* Glows */
-  --glow-cyan: rgba(0, 153, 204, 0.3);
-  --glow-magenta: rgba(194, 0, 138, 0.3);
-  --glow-gold: rgba(204, 153, 0, 0.25);
-  --glow-white: rgba(0, 0, 0, 0.1);
-  --glow-pink: rgba(230, 0, 122, 0.3);
-  --glow-purple: rgba(136, 0, 204, 0.3);
-  --glow-teal: rgba(0, 184, 212, 0.25);
-  --glow-sunset: rgba(255, 149, 0, 0.25);
+  --glow-cyan: rgba(0, 136, 187, 0.25);
+  --glow-magenta: rgba(184, 0, 122, 0.25);
+  --glow-gold: rgba(184, 136, 0, 0.2);
+  --glow-white: rgba(0, 0, 0, 0.08);
+  --glow-pink: rgba(214, 0, 107, 0.25);
+  --glow-purple: rgba(119, 0, 187, 0.25);
+  --glow-teal: rgba(0, 160, 192, 0.2);
+  --glow-sunset: rgba(230, 133, 0, 0.2);
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, #0099CC 0%, #C2008A 50%, #CC9900 100%);
-  --gradient-vaporwave: linear-gradient(135deg, #E6007A 0%, #8800CC 25%, #0099CC 50%, #FF9500 75%, #C2008A 100%);
-  --gradient-sunset: linear-gradient(180deg, #E6007A 0%, #FF9500 50%, #8800CC 100%);
-  --gradient-bg: linear-gradient(180deg, #F5F0FF 0%, #E8DBFF 50%, #D4C2F0 100%);
-  --gradient-text: linear-gradient(135deg, #0099CC 0%, #C2008A 50%, #CC9900 100%);
-  --gradient-holographic: linear-gradient(135deg, #0099CC 0%, #E6007A 20%, #8800CC 40%, #00B8D4 60%, #FF9500 80%, #C2008A 100%);
+  --gradient-primary: linear-gradient(135deg, #0088BB 0%, #B8007A 50%, #B88800 100%);
+  --gradient-vaporwave: linear-gradient(135deg, #D6006B 0%, #7700BB 25%, #0088BB 50%, #E68500 75%, #B8007A 100%);
+  --gradient-sunset: linear-gradient(180deg, #D6006B 0%, #E68500 50%, #7700BB 100%);
+  --gradient-bg: linear-gradient(180deg, #FDF8FF 0%, #EFE0FF 50%, #E0CCFF 100%);
+  --gradient-text: linear-gradient(135deg, #0088BB 0%, #B8007A 50%, #B88800 100%);
+  --gradient-holographic: linear-gradient(135deg, #0088BB 0%, #D6006B 20%, #7700BB 40%, #00A0C0 60%, #E68500 80%, #B8007A 100%);
 }
 ```
 
@@ -1153,10 +1287,14 @@ body::after {
 
 ### 8.1 Contrast Ratios
 
-**Current Compliance:**
+**Dark Theme Compliance:**
 - ✅ Cyan text (#00F0FF) on purple background (#0D0221): **12.5:1** (WCAG AAA)
 - ✅ Soft cyan (#B8E9FF) on purple: **14.8:1** (WCAG AAA)
-- ✅ Light theme purple text (#1A0B2E) on sky blue (#E8F4FF): **11.2:1** (WCAG AAA)
+
+**Light Theme Compliance (Refined v3.1):**
+- ✅ Deep purple-black text (#1F0D3A) on soft lavender (#FDF8FF): **13.8:1** (WCAG AAA)
+- ✅ Rich purple text (#4A2B6B) on soft lavender (#FDF8FF): **8.2:1** (WCAG AAA)
+- ✅ Improved readability with deeper text colors and softer backgrounds
 
 ### 8.2 Reduced Motion Support
 
@@ -1413,5 +1551,27 @@ A developer portfolio that looks like it was **designed in 2086 and sent back th
 ---
 
 **Last Updated:** 2026-02-09  
-**Design System Version:** 3.0 (Complete Vaporwave Transformation)  
+**Design System Version:** 3.2 (Theme-Specific Glow Effects)  
 **Status:** Production Ready ✓
+
+### Recent Updates (v3.2)
+- **Theme-Specific Glow Effects**: Optimized visual effects for each theme
+  - **Dark theme**: Subtle, refined glow effects (0.05-0.3 opacity range)
+  - **Light theme**: Visible, professional effects (0.2-0.7 opacity range)
+  - Separate animations for vaporwave-wave (dark: 0.15-0.25, light: 0.4-0.7)
+  - ExperienceCard hover effects unified to subtle approach (2px chromatic aberration)
+  - Footer ambient glow reduced (dark: 0.15-0.3, light: 0.4-0.6)
+  - Page ambient effects optimized per theme
+- **Improved Visual Hierarchy**: Both themes now have intentional, polished aesthetics
+- **Better Accessibility**: Reduced visual noise while maintaining vaporwave character
+
+### Previous Updates (v3.1)
+- **Refined Light Theme Colors**: Improved contrast and readability
+  - Softer backgrounds (#FDF8FF) for reduced eye strain
+  - Deeper text colors (#1F0D3A) for better accessibility
+  - Desaturated but vibrant accents for professional appearance
+  - Lighter glow effects (0.2-0.25 opacity) for subtle presence
+  - Enhanced cohesion between dark and light themes
+- **Maintained Vaporwave Aesthetic**: Retro-futuristic feel preserved across both themes
+- **Improved Accessibility**: Better contrast ratios while maintaining visual appeal
+

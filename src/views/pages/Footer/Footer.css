@@ -48,7 +48,9 @@
 }
 
 /* Subtle radial glow behind footer content */
-.footer-outer::after {
+/* Dark theme (default - subtle) */
+:root .footer-outer::after,
+:root.dark .footer-outer::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -56,19 +58,37 @@
     transform: translate(-50%, -50%);
     width: 60%;
     height: 80%;
-    background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.05) 0%, rgba(255, 0, 245, 0.05) 50%, transparent 70%);
+    background: radial-gradient(ellipse at center, var(--glow-cyan) 0%, var(--glow-magenta) 50%, transparent 70%);
     pointer-events: none;
     z-index: 0;
-    animation: footer-ambient-pulse 6s ease-in-out infinite;
+    animation: footer-ambient-pulse-dark 6s ease-in-out infinite;
 }
 
-@keyframes footer-ambient-pulse {
+/* Light theme (more visible) */
+:root.light .footer-outer::after {
+    animation: footer-ambient-pulse-light 6s ease-in-out infinite;
+}
+
+/* Dark theme animation - subtle */
+@keyframes footer-ambient-pulse-dark {
     0%, 100% {
-        opacity: 0.5;
+        opacity: 0.15;
         transform: translate(-50%, -50%) scale(1);
     }
     50% {
-        opacity: 0.8;
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
+
+/* Light theme animation - more visible */
+@keyframes footer-ambient-pulse-light {
+    0%, 100% {
+        opacity: 0.4;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.6;
         transform: translate(-50%, -50%) scale(1.1);
     }
 }

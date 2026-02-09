@@ -55,8 +55,8 @@
     drop-shadow(0 0 12px var(--glow-cyan))
     drop-shadow(0 0 18px var(--glow-pink))
     drop-shadow(0 0 8px var(--glow-purple))
-    drop-shadow(1px 0 0 rgba(0, 240, 255, 0.3))
-    drop-shadow(-1px 0 0 rgba(255, 110, 199, 0.3));
+    drop-shadow(1px 0 0 var(--glow-cyan))
+    drop-shadow(-1px 0 0 var(--glow-pink));
   transform: translateY(-1px);
   animation: gradient-shift 2s ease-in-out infinite;
 }
@@ -82,9 +82,9 @@ button {
   overflow: hidden;
   animation: button-gradient-shift 6s ease-in-out infinite;
   box-shadow:
-    0 0 15px rgba(0, 240, 255, 0.3),
-    0 0 25px rgba(255, 0, 245, 0.2),
-    inset 0 0 20px rgba(255, 255, 255, 0.1);
+    0 0 15px var(--glow-cyan),
+    0 0 25px var(--glow-magenta),
+    inset 0 0 20px var(--glow-white);
 }
 
 @keyframes button-gradient-shift {
@@ -119,17 +119,17 @@ button:hover, button:active {
     0 0 25px var(--glow-cyan),
     0 0 45px var(--glow-pink),
     0 0 35px var(--glow-purple),
-    rgba(0, 240, 255, 0.4) 0px 2px 8px 0px,
-    rgba(255, 110, 199, 0.3) 0px 6px 12px 0px,
-    inset 0 0 30px rgba(255, 255, 255, 0.15);
+    var(--glow-cyan) 0px 2px 8px 0px,
+    var(--glow-pink) 0px 6px 12px 0px,
+    inset 0 0 30px var(--glow-white);
   transform: translateY(-3px) scale(1.02);
   transition: all 0.3s ease;
   animation: button-glow-pulse 1.5s ease-in-out infinite;
   /* Chromatic aberration effect */
   filter:
-    drop-shadow(2px 0 0 rgba(0, 240, 255, 0.5))
-    drop-shadow(-2px 0 0 rgba(255, 110, 199, 0.5))
-    drop-shadow(0 2px 0 rgba(157, 0, 255, 0.4));
+    drop-shadow(2px 0 0 var(--glow-cyan))
+    drop-shadow(-2px 0 0 var(--glow-pink))
+    drop-shadow(0 2px 0 var(--glow-purple));
 }
 
 @keyframes button-glow-pulse {
@@ -138,18 +138,18 @@ button:hover, button:active {
       0 0 25px var(--glow-cyan),
       0 0 45px var(--glow-pink),
       0 0 35px var(--glow-purple),
-      rgba(0, 240, 255, 0.4) 0px 2px 8px 0px,
-      rgba(255, 110, 199, 0.3) 0px 6px 12px 0px,
-      inset 0 0 30px rgba(255, 255, 255, 0.15);
+      var(--glow-cyan) 0px 2px 8px 0px,
+      var(--glow-pink) 0px 6px 12px 0px,
+      inset 0 0 30px var(--glow-white);
   }
   50% {
     box-shadow:
       0 0 30px var(--glow-cyan),
       0 0 55px var(--glow-pink),
       0 0 45px var(--glow-purple),
-      rgba(0, 240, 255, 0.5) 0px 2px 12px 0px,
-      rgba(255, 110, 199, 0.4) 0px 8px 16px 0px,
-      inset 0 0 40px rgba(255, 255, 255, 0.2);
+      var(--glow-cyan) 0px 2px 12px 0px,
+      var(--glow-pink) 0px 8px 16px 0px,
+      inset 0 0 40px var(--glow-white);
   }
 }
 
