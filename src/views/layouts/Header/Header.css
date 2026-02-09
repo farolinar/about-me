@@ -2,7 +2,7 @@
     position: sticky;
     top: 0px;
     z-index: 10;
-    background: linear-gradient(180deg, var(--theme-shade-four) 0%, rgba(13, 2, 33, 0.95) 100%);
+    background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-header) 100%);
     backdrop-filter: blur(10px);
     transition: border-bottom 0.5s ease;
     border-bottom: 1px solid transparent;
@@ -23,7 +23,7 @@
 }
 
 .header-layout-outer.scrolled {
-    border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+    border-bottom: 1px solid var(--border-default);
 }
 
 .header-layout-outer.scrolled::after {
@@ -55,7 +55,7 @@
     font-variation-settings:
         "BLED" 0,
         "SCAN" 0;
-    background: linear-gradient(135deg, var(--logo-shade-one) 0%, var(--logo-shade-two) 50%, var(--logo-shade-three) 100%);
+    background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -63,6 +63,7 @@
     margin: 0;
     font-size: 29px;
     filter: drop-shadow(0 0 15px var(--glow-cyan)) drop-shadow(0 0 20px var(--glow-magenta)) drop-shadow(0 0 10px var(--glow-gold));
+    animation: logo-glow-shift 5s ease-in-out infinite;
 
     /* overflow: hidden;
     border-right: .15em solid var(--theme-shade-one);
@@ -71,6 +72,18 @@
     animation:
         typing 0.8s steps(13, end),
         blink-caret .75s step-end infinite; */
+}
+
+@keyframes logo-glow-shift {
+    0%, 100% {
+        filter: drop-shadow(0 0 15px var(--glow-cyan)) drop-shadow(0 0 20px var(--glow-magenta)) drop-shadow(0 0 10px var(--glow-gold));
+    }
+    33% {
+        filter: drop-shadow(0 0 20px var(--glow-magenta)) drop-shadow(0 0 15px var(--glow-gold)) drop-shadow(0 0 10px var(--glow-cyan));
+    }
+    66% {
+        filter: drop-shadow(0 0 20px var(--glow-gold)) drop-shadow(0 0 15px var(--glow-cyan)) drop-shadow(0 0 10px var(--glow-magenta));
+    }
 }
 
 .header-layout-outer .logo img {

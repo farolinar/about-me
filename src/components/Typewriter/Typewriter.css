@@ -4,12 +4,12 @@
 
 .typing-component a {
     text-decoration: none;
-    color: var(--theme-text-color);
+    color: var(--text-accent);
 }
 
 .typing-component .typewrite > .wrap {
-    border-right: 0.08em solid var(--theme-text-main);
-    animation: caret 1s steps(1) infinite;
+    border-right: 0.08em solid var(--text-primary);
+    animation: caret 1s steps(1) infinite, caret-glow 2s ease-in-out infinite;
     filter: drop-shadow(0 0 3px var(--glow-cyan)) drop-shadow(0 0 6px var(--glow-cyan));
 }
 
@@ -18,4 +18,14 @@
     50% {
       border-color: transparent;
     }
-  }
+}
+
+/* Enhanced caret glow pulse */
+@keyframes caret-glow {
+    0%, 100% {
+        filter: drop-shadow(0 0 3px var(--glow-cyan)) drop-shadow(0 0 6px var(--glow-cyan));
+    }
+    50% {
+        filter: drop-shadow(0 0 6px var(--glow-cyan)) drop-shadow(0 0 12px var(--glow-cyan)) drop-shadow(0 0 8px var(--glow-magenta));
+    }
+}

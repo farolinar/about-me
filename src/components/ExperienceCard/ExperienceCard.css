@@ -57,26 +57,26 @@
     .title {
         font-weight: bold;
         font-size: 18px;
-        color: var(--theme-text-main);
+        color: var(--text-primary);
         text-shadow: 0 0 10px var(--glow-cyan);
     }
 
     .place {
         font-weight: 600;
         font-size: 14px;
-        color: var(--theme-text-color);
+        color: var(--text-accent);
         text-shadow: 0 0 8px var(--glow-magenta);
     }
 
     .time {
         font-size: 12px;
-        color: var(--theme-text-secondary);
+        color: var(--text-secondary);
     }
 
     .description {
         line-height: normal;
         margin-top: 15px;
-        color: var(--theme-text-secondary);
+        color: var(--text-secondary);
     }
 
     .skills {
@@ -87,13 +87,13 @@
         > :first-child {
             margin-right: 15px;
             font-weight: 600;
-            color: var(--theme-text-color);
+            color: var(--text-accent);
             text-shadow: 0 0 8px var(--glow-magenta);
         }
 
         .skill {
             text-align: center;
-            color: var(--theme-text-main);
+            color: var(--text-primary);
         }
     }
 }
@@ -104,7 +104,7 @@
     inset: 0;
     border-radius: 15px;
     border: 2px solid transparent;
-    background: linear-gradient(140deg, var(--logo-shade-one), var(--logo-shade-two), var(--logo-shade-three)) border-box;
+    background: var(--gradient-primary) border-box;
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     mask-composite: exclude;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
@@ -126,6 +126,11 @@
     background: linear-gradient(135deg, rgba(13, 2, 33, 0.8) 0%, rgba(26, 11, 46, 0.6) 100%);
     transform: translateY(-5px);
     transition: all 0.3s ease;
+    /* Enhanced chromatic aberration on hover */
+    filter:
+        drop-shadow(3px 0 0 rgba(0, 240, 255, 0.3))
+        drop-shadow(-3px 0 0 rgba(255, 0, 245, 0.3))
+        drop-shadow(0 3px 0 rgba(255, 215, 0, 0.2));
 }
 
 /* minimum iPads (portrait and landscape)  */

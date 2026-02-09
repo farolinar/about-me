@@ -40,16 +40,21 @@
   font-weight: 500;
   -webkit-tap-highlight-color: transparent;
   transition: all 0.3s ease;
-  color: var(--theme-text-main);
+  color: var(--text-primary);
 }
 
 .clickable-text:hover, .clickable-text:active {
   font-weight: 600;
-  background: linear-gradient(135deg, var(--logo-shade-one) 0%, var(--logo-shade-two) 50%, var(--logo-shade-three) 100%);
+  background: var(--gradient-text);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 0 12px var(--glow-cyan)) drop-shadow(0 0 18px var(--glow-magenta)) drop-shadow(0 0 8px var(--glow-gold));
+  filter:
+    drop-shadow(0 0 12px var(--glow-cyan))
+    drop-shadow(0 0 18px var(--glow-magenta))
+    drop-shadow(0 0 8px var(--glow-gold))
+    drop-shadow(1px 0 0 rgba(0, 240, 255, 0.3))
+    drop-shadow(-1px 0 0 rgba(255, 0, 245, 0.3));
   transform: translateY(-1px);
 }
 
@@ -60,17 +65,19 @@ button {
   -webkit-user-select: none;
   -o-user-select: none;
 
-  background: linear-gradient(90deg, #00F0FF 0%, #FF00F5 70%);
+  background: linear-gradient(90deg, var(--accent-cyan) 0%, var(--accent-magenta) 70%);
   cursor: pointer;
   border: none;
   -webkit-tap-highlight-color: transparent;
   transition: all 0.3s ease;
-  color: #0D0221;
+  color: var(--bg-primary);
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
+  /* Chromatic aberration prep */
+  filter: drop-shadow(0 0 0 transparent);
 }
 
 button::before {
@@ -89,7 +96,7 @@ button:hover::before {
 }
 
 button:hover, button:active {
-  background: linear-gradient(135deg, #00F0FF 0%, #FF00F5 50%, #FFD700 100%);
+  background: var(--gradient-primary);
   box-shadow:
     0 0 20px var(--glow-cyan),
     0 0 40px var(--glow-magenta),
@@ -98,6 +105,11 @@ button:hover, button:active {
     rgba(255, 0, 245, 0.2) 0px 4px 8px 0px;
   transform: translateY(-2px);
   transition: all 0.3s ease;
+  /* Chromatic aberration effect */
+  filter:
+    drop-shadow(2px 0 0 rgba(0, 240, 255, 0.4))
+    drop-shadow(-2px 0 0 rgba(255, 0, 245, 0.4))
+    drop-shadow(0 2px 0 rgba(255, 215, 0, 0.3));
 }
 
 .no-background {

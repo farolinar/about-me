@@ -38,7 +38,7 @@ function HeaderLayout({refs=[]}) {
                     </div>
                     <div className="logo">
                         <img src={window.location.origin + '/logo.png'} alt="logo" />
-                        <p>FAROL R</p>
+                        {/* <p>FAROL R</p> */}
                     </div>
                     <HeaderMenuList refs={refs} />
                     <HeaderIcons />

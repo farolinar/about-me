@@ -13,7 +13,7 @@
     font-weight: 700;
 
     /* Enhanced gradient text for hero headline */
-    background: linear-gradient(135deg, var(--logo-shade-one) 0%, var(--logo-shade-two) 50%, var(--logo-shade-three) 100%);
+    background: var(--gradient-text);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -21,30 +21,87 @@
     text-align: left;
     font-size: 2.5em;
     filter: drop-shadow(0 0 25px var(--glow-cyan)) drop-shadow(0 0 35px var(--glow-magenta)) drop-shadow(0 0 15px var(--glow-gold));
+
+    /* Entrance animation */
+    animation: headline-entrance 0.8s ease-out;
+}
+
+@keyframes headline-entrance {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: drop-shadow(0 0 0 transparent);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: drop-shadow(0 0 25px var(--glow-cyan)) drop-shadow(0 0 35px var(--glow-magenta)) drop-shadow(0 0 15px var(--glow-gold));
+    }
 }
 
 .about-outer .section.text .introduction {
     font-weight: 700;
     font-size: 1.8em;
 
-    color: var(--theme-text-main);
+    color: var(--text-primary);
     text-shadow: 0 0 20px var(--glow-cyan);
 
     margin-top: 10px;
     margin-bottom: 40px;
+
+    /* Entrance animation with delay */
+    animation: introduction-entrance 0.8s ease-out 0.2s both;
+}
+
+@keyframes introduction-entrance {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .about-outer .section.text .content {
     /* margin-top: 40px; */
-    color: var(--theme-text-secondary);
+    color: var(--text-secondary);
     font-size: 20px;
     line-height: 1.6;
+
+    /* Entrance animation with delay */
+    animation: content-entrance 0.8s ease-out 0.4s both;
+}
+
+@keyframes content-entrance {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
  /* components */
  .about-outer .text-prompt {
-    color: var(--theme-text-color);
+    color: var(--text-accent);
     text-shadow: 0 0 10px var(--glow-magenta);
+    display: inline-block;
+    animation: prompt-pulse 2s ease-in-out infinite;
+ }
+
+ @keyframes prompt-pulse {
+    0%, 100% {
+        text-shadow: 0 0 10px var(--glow-magenta);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--glow-magenta), 0 0 30px var(--glow-magenta);
+        transform: scale(1.05);
+    }
  }
 
  /* minimum iPads (portrait and landscape)  */
