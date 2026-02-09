@@ -61,6 +61,11 @@
   animation: gradient-shift 2s ease-in-out infinite;
 }
 
+button > * {
+  transform: skew(15deg); /* Counter-skew text */
+  display: inline-block;
+}
+
 button {
   user-select: none;
   -moz-user-select: none;
@@ -81,6 +86,7 @@ button {
   position: relative;
   overflow: hidden;
   animation: button-gradient-shift 6s ease-in-out infinite;
+  transform: skew(-15deg); /* Kinetic Geometry */
   box-shadow:
     0 0 15px var(--glow-cyan),
     0 0 25px var(--glow-magenta),
@@ -122,7 +128,7 @@ button:hover, button:active {
     var(--glow-cyan) 0px 2px 8px 0px,
     var(--glow-pink) 0px 6px 12px 0px,
     inset 0 0 30px var(--glow-white);
-  transform: translateY(-3px) scale(1.02);
+  transform: translateY(-3px) scale(1.02) skew(0deg); /* Un-skew on hover */
   transition: all 0.3s ease;
   animation: button-glow-pulse 1.5s ease-in-out infinite;
   /* Chromatic aberration effect */
@@ -157,6 +163,23 @@ button:hover, button:active {
   background: transparent !important;
 }
 
+
+
+/* Header and Footer Button Exceptions */
+.header-layout-outer button,
+.footer-outer button {
+  transform: none !important;
+}
+
+.header-layout-outer button > *,
+.footer-outer button > * {
+  transform: none !important;
+}
+
+.header-layout-outer button:hover,
+.footer-outer button:hover {
+  transform: translateY(-2px) scale(1.05) !important;
+}
 
 @keyframes App-logo-spin {
   from {

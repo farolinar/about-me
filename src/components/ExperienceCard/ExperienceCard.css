@@ -102,7 +102,7 @@
 /* Dark theme hover effect (managed by Vaporwave Window mainly, but keeping specific lift if needed) */
 :root .experience-card-outer:hover,
 :root.dark .experience-card-outer:hover {
-    transform: translateY(-8px);
+    transform: translateY(-5px);
 }
 
 /* Light theme hover effect */
