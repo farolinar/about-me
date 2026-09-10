@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Refreshing My Memory on RabbitMQ & Pub/Sub: Mastering Competing Consumers 💡",
+    "thumbnail": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*Gl9ncILv55zQF-PVxv9WQQ.png",
+    "description": "Lately, I’ve been refreshing my memory on messaging patterns, Pub/Sub, and RabbitMQ. It’s one of those core backend topics that we often take for granted until we hit scale or need reliable asynchronous task processing.",
+    "created_at": "2026-09-10",
+    "category": "Backend",
+    "url": "https://medium.com/@farolinar/refreshing-my-memory-on-rabbitmq-pub-sub-mastering-competing-consumers-fab4bd82d662?sharedUserId=farolinar"
+  },
+  {
+    "id": 2,
+    "title": "Learn Nmap: Live Host Discovery 🎯",
+    "thumbnail": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*6RftzfWgzmprC6FRsI0B7w.jpeg",
+    "description": "In the journey of learning cybersecurity (and hopefully initiating my career as a Penetration Tester), one of the tools I am learning is Nmap. According to the official site, Nmap is…",
+    "created_at": "2026-09-10",
+    "category": "Cybersecurity",
+    "url": "https://medium.com/@farolinar/learn-nmap-live-host-discovery-f643c56b9925"
+  }
+]

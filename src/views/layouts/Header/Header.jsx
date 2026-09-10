@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import "./Header.min.css"
+import { useNavigate, useLocation } from "react-router-dom";
+import "./Header.min.css";
 import HamburgerIcon from "../../../assets/img/hamburger.png";
 import HeaderIcons from "../../../components/HeaderIcons/HeaderIcons";
 import { showSideMenu } from "../../../utils/viewUtil";
 import HeaderMenuList from "../../../components/HeaderMenuList/HeaderMenuList";
 import SideMenu from "../../../components/SideMenu/SideMenu";
 
-
-function HeaderLayout({refs=[]}) {
+function HeaderLayout({ refs = [] }) {
     const [scrolled, setScrolled] = useState(false);
     const [glowOpacity, setGlowOpacity] = useState(0);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -26,6 +28,14 @@ function HeaderLayout({refs=[]}) {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    const handleLogoClick = () => {
+        if (location.pathname !== '/') {
+            navigate('/');
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    };
+
     return (
         <>
             <div
@@ -36,9 +46,8 @@ function HeaderLayout({refs=[]}) {
                     <div className="hamburger" onClick={showSideMenu} >
                         <img src={HamburgerIcon} alt="hamburger" />
                     </div>
-                    <div className="logo">
+                    <div className="logo" onClick={handleLogoClick} style={{ cursor: 'pointer' }}>
                         <img src={window.location.origin + '/logo.png'} alt="logo" />
-                        {/* <p>FAROL R</p> */}
                     </div>
                     <HeaderMenuList refs={refs} />
                     <HeaderIcons />
@@ -46,7 +55,7 @@ function HeaderLayout({refs=[]}) {
                 <SideMenu refs={refs} />
             </div>
         </>
-    )
+    );
 }
 
 export default HeaderLayout;

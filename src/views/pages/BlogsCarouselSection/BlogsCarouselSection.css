@@ -1,0 +1,9 @@
+.blogs-section-outer {
+  width: 100%;
+}
+
+.blogs-section-outer h1 {
+  color: var(--theme-text-color);
+  text-align: center;
+  margin-bottom: 40px;
+}
