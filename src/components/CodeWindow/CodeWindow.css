@@ -1,68 +1,121 @@
 .code-window {
-    background-color: #0d1117; /* GitHub Dark / Midnight-ish */
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-    border: 1px solid #30363d;
-    width: 100%;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #0d1117; /* GitHub Dark / Midnight-ish */
+  border-radius: 8px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    0 0 12px rgba(0, 240, 255, 0.15);
+  overflow: hidden;
+  font-family: "Consolas", "Monaco", "Courier New", monospace;
+  border: 1px solid #30363d;
+  /* border-top: 1px solid var(--accent-cyan, #00F0FF); Vaporwave neon accent */
+  width: 100%;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .code-window:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  transform: translateY(-5px);
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(0, 240, 255, 0.25);
+}
+
+/* Disable lift on touch devices where hover is unreliable */
+@media (hover: none) {
+  .code-window:hover {
+    transform: none;
+  }
 }
 
 .window-header {
-    background-color: #161b22;
-    padding: 10px 15px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #30363d;
+  background-color: #161b22;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #30363d;
 }
 
 .window-controls {
-    display: flex;
-    gap: 8px;
-    margin-right: 15px;
+  display: flex;
+  gap: 8px;
+  margin-right: 15px;
 }
 
 .control {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
 }
 
-.control.red { background-color: #ff5f56; }
-.control.yellow { background-color: #ffbd2e; }
-.control.green { background-color: #27c93f; }
+.control.red {
+  background-color: #ff5f56;
+}
+.control.yellow {
+  background-color: #ffbd2e;
+}
+.control.green {
+  background-color: #27c93f;
+}
 
 .window-title {
-    color: #8b949e;
-    font-size: 14px;
-    margin-left: auto;
-    margin-right: auto;
+  color: #8b949e;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .window-content {
-    padding: 20px;
-    overflow-x: hidden; /* User requested no overflow-x */
-    color: #c9d1d9;
-    font-size: 14px;
-    line-height: 1.5;
+  padding: 20px;
+  overflow-x: hidden; /* User requested no overflow-x */
+  color: #c9d1d9;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .window-content pre {
-    margin: 0;
-    white-space: pre; /* Keep pre formatting */
+  margin: 0;
+  white-space: pre; /* Keep pre formatting on desktop */
+}
+
+/* Tablet & mobile: allow lines to wrap rather than overflow */
+@media only screen and (max-device-width: 1024px) {
+  .window-content {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .window-content pre {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .window-content {
+    padding: 14px 12px;
+    font-size: 12px;
+  }
 }
 
 /* Syntax Highlighting - Custom Dark Theme per User Request */
-.keyword { color: #ff9b5e; } /* Orange/Peach for package, type, struct, var */
-.type { color: #79c0ff; }    /* Blue for types (kept similar or slightly adjusted) */
+.keyword {
+  color: #ff9b5e;
+} /* Orange/Peach for package, type, struct, var */
+.type {
+  color: #79c0ff;
+} /* Blue for types (kept similar or slightly adjusted) */
 /* .string { color: #a5d6ff; }  Removed duplicate light blue */
-.string { color: #9fe0c3; }  /* Greenish for strings */
-.comment { color: #8b949e; font-style: italic; }
-.function { color: #d2a8ff; } 
-.number { color: #79c0ff; }
+.string {
+  color: #9fe0c3;
+} /* Greenish for strings */
+.comment {
+  color: #8b949e;
+  font-style: italic;
+}
+.function {
+  color: #d2a8ff;
+}
+.number {
+  color: #79c0ff;
+}

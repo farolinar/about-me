@@ -4,7 +4,7 @@ import Page from "../../layouts/Page/Page";
 import "./About.min.css";
 import CodeWindow from "../../../components/CodeWindow/CodeWindow";
 
-function About({thisRef}) {
+function About({ thisRef }) {
   return (
     <>
       <Page main={true}>
@@ -14,9 +14,13 @@ function About({thisRef}) {
               <BlinkingComponent>
                 <div className="text-prompt">&gt;&nbsp;</div>
               </BlinkingComponent>
-              <div>Greetings<span>,</span></div>
+              <div>
+                Greetings<span>,</span>
+              </div>
             </div>
-            <div className="headline my-name">My name is Farolina Rahmatunnisa</div>
+            <div className="headline my-name">
+              My name is Farolina Rahmatunnisa
+            </div>
             <div className="introduction">
               I am a{" "}
               <Typewriter
@@ -47,21 +51,50 @@ function About({thisRef}) {
           </div>
           <div className="section visual">
             <CodeWindow title="main.go">
-              <pre><code>
-<span className="keyword">package</span> main{"\n"}
-{"\n"}
-<span className="keyword">var</span> farol = <span className="type">Profile</span>&#123;{"\n"}
-  {"   "}Code: []<span className="type">string</span>&#123;<span className="string">"Go"</span>, <span className="string">"Javascript"</span>, <span className="string">"Python"</span>&#125;,{"\n"}
-    {"   "}FrontEnd: []<span className="type">string</span>&#123;<span className="string">"React"</span>, <span className="string">"Next.js"</span>&#125;,{"\n"}
-    {"   "}BackEnd: []<span className="type">string</span>&#123;<span className="string">"Go"</span>, <span className="string">"Python"</span>, <span className="string">"Javascript"</span>&#125;,{"\n"}
-    {"   "}CloudServices: []<span className="type">string</span>&#123;<span className="string">"GCP"</span>&#125;,{"\n"}
-    {"   "}Databases: []<span className="type">string</span>&#123;<span className="string">"PostgreSQL"</span>, <span className="string">"MySQL"</span>, <span className="string">"redis"</span>&#125;,{"\n"}
-    {"   "}Misc: []<span className="type">string</span>&#123;&#125;,{"\n"}
-  {"\n"}
-  {"   "}CurrentFocus: <span className="string">"Cybersecurity would be fun, I think."</span>,{"\n"}
-  {"   "}FunFact:      <span className="string">"I'm training to be a sword master"</span>,{"\n"}
-&#125;
-              </code></pre>
+              <pre>
+                <code>
+                  <span className="keyword">package</span> main{"\n"}
+                  {"\n"}
+                  <span className="keyword">var</span> farol ={" "}
+                  <span className="type">Profile</span>&#123;{"\n"}
+                  {"   "}BackEnd: []<span className="type">string</span>&#123;
+                  <span className="string">"Go"</span>,{" "}
+                  <span className="string">"Python"</span>,{" "}
+                  <span className="string">"Javascript"</span>&#125;,{"\n"}
+                  {"   "}FrontEnd: []<span className="type">string</span>&#123;
+                  <span className="string">"React"</span>,{" "}
+                  <span className="string">"Next.js"</span>&#125;,{"\n"}
+                  {"   "}CloudServices: []<span className="type">string</span>
+                  &#123;<span className="string">"GCP"</span>&#125;,{"\n"}
+                  {"   "}Databases: []<span className="type">string</span>&#123;
+                  <span className="string">"PostgreSQL"</span>,{" "}
+                  <span className="string">"MySQL"</span>,{" "}
+                  <span className="string">"redis"</span>&#125;,{"\n"}
+                  {"   "}IELTS: <span className="type">struct</span> &#123;
+                  {"\n"}
+                  {"       "}Reading: <span className="number">8.5</span>,{"\n"}
+                  {"       "}Listening: <span className="number">8.0</span>,
+                  {"\n"}
+                  {"       "}Writing: <span className="number">7.0</span>,{"\n"}
+                  {"       "}Speaking: <span className="number">6.5</span>,
+                  {"\n"}
+                  {"   "}&#125;,{"\n"}
+                  {"   "}Misc: []<span className="type">string</span>&#123;
+                  <span className="string">"RabbitMQ"</span>&#125;,{"\n"}
+                  {"\n"}
+                  {"   "}CurrentFocus:{" "}
+                  <span className="string">
+                    "Cybersecurity would be fun, I think."
+                  </span>
+                  ,{"\n"}
+                  {"   "}FunFact:{" "}
+                  <span className="string">
+                    "I'm training to be a sword master"
+                  </span>
+                  ,{"\n"}
+                  &#125;
+                </code>
+              </pre>
             </CodeWindow>
           </div>
         </div>

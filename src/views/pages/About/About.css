@@ -72,8 +72,9 @@
   }
 
   .about-outer .section.visual {
-    display: none;
+    display: block;
     padding-left: 0;
+    margin-top: 40px;
   }
 }
 
@@ -93,5 +94,9 @@
 
   .about-outer .section.text .introduction {
     font-size: 1.2em;
+  }
+
+  .about-outer .section.visual {
+    margin-top: 32px;
   }
 }
