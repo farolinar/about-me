@@ -7,7 +7,7 @@ import "./Experience.css";
 function Experience({thisRef}) {
   return (
     <>
-      <Page last>
+      <Page>
         <div className="experience-outer" ref={thisRef}>
           <h1>Experience</h1>
           <ChronoTimeline>

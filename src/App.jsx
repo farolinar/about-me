@@ -8,6 +8,7 @@ import Experience from './views/pages/Experience/Experience';
 import BlogsCarouselSection from './views/pages/BlogsCarouselSection/BlogsCarouselSection';
 import BlogsPage from './views/pages/BlogsPage/BlogsPage';
 import Footer from './views/pages/Footer/Footer';
+import Education from './views/pages/Education/Education';
 
 function HomeView({ refs }) {
   const [aboutRef, experienceRef, educationRef, blogsRef] = refs;
@@ -18,14 +19,16 @@ function HomeView({ refs }) {
       const section = location.state.scrollTo;
       if (section === 'about' && aboutRef.current) aboutRef.current.scrollIntoView({ behavior: 'smooth' });
       if (section === 'experience' && experienceRef.current) experienceRef.current.scrollIntoView({ behavior: 'smooth' });
+      if (section === 'education' && educationRef.current) educationRef.current.scrollIntoView({ behavior: 'smooth' });
       if (section === 'blogs' && blogsRef.current) blogsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [location, aboutRef, experienceRef, blogsRef]);
+  }, [location, aboutRef, experienceRef, educationRef, blogsRef]);
 
   return (
     <>
       <About thisRef={aboutRef} />
       <Experience thisRef={experienceRef} />
+      <Education thisRef={educationRef} />
       <BlogsCarouselSection thisRef={blogsRef} />
     </>
   );

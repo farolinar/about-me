@@ -1,0 +1,176 @@
+.education-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  /* Full-bleed background — URL comes from the item's own bg property via inline CSS var */
+  background-image: var(--education-bg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+/* Dark overlay for readability */
+.education-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 2, 33, 0.55) 0%,
+    rgba(13, 2, 33, 0.75) 60%,
+    rgba(13, 2, 33, 0.9) 100%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+:root.light .education-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(245, 240, 255, 0.4) 0%,
+    rgba(245, 240, 255, 0.65) 60%,
+    rgba(245, 240, 255, 0.85) 100%
+  );
+}
+
+/* Vaporwave neon top border accent */
+.education-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--gradient-primary);
+  box-shadow:
+    0 0 12px var(--glow-cyan),
+    0 0 24px var(--glow-magenta);
+  z-index: 1;
+}
+
+.education-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 960px;
+  padding: 80px 30px;
+  box-sizing: border-box;
+}
+
+/* Section title */
+.education-title {
+  color: var(--theme-text-color);
+  text-align: center;
+  margin-bottom: 48px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-shadow:
+    0 0 10px var(--glow-cyan),
+    0 0 20px var(--glow-magenta);
+}
+
+/* Item header */
+.education-item-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.education-item-name {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+  text-shadow: none;
+  filter: drop-shadow(0 0 8px var(--glow-cyan));
+}
+
+.education-item-year {
+  color: var(--accent-gold);
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 6px var(--glow-gold);
+  white-space: nowrap;
+}
+
+/* Section labels — terminal comment style */
+.education-label {
+  color: var(--accent-cyan);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  margin: 0 0 10px 0;
+  text-shadow: 0 0 5px var(--glow-cyan);
+}
+
+/* Activities */
+.education-item-activities {
+  margin-bottom: 28px;
+}
+
+.education-item-activities ul {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* Courses grid — chip layout */
+.courses-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.course-chip {
+  display: inline-block;
+  padding: 5px 12px;
+  border: 1px solid var(--accent-cyan);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+  background: rgba(0, 240, 255, 0.06);
+  box-shadow: 0 0 6px var(--glow-cyan);
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.course-chip:hover {
+  background: rgba(0, 240, 255, 0.15);
+  box-shadow:
+    0 0 12px var(--glow-cyan),
+    0 0 20px var(--glow-magenta);
+}
+
+:root.light .course-chip {
+  border-color: var(--accent-cyan);
+  background: rgba(0, 153, 204, 0.08);
+  box-shadow: 0 0 4px var(--glow-cyan);
+}
+
+/* Responsive */
+@media only screen and (max-width: 767px) {
+  .education-content {
+    padding: 60px 20px;
+  }
+
+  .education-item-header {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  /* fixed background-attachment breaks on iOS Safari */
+  .education-section {
+    background-attachment: scroll;
+  }
+}

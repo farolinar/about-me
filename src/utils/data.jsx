@@ -2,6 +2,7 @@ import KitaBisaImg from "../assets/img/experiences/exp-kitabisa.png"
 import KlikdokterImg from "../assets/img/experiences/exp-klikdokter.png"
 import CBNImg from "../assets/img/experiences/exp-cbn.avif"
 import TapTalkImg from "../assets/img/experiences/exp-taptalk.png"
+import UniversityOfIndonesiaImg from "../assets/img/university_of_indonesia.png"
 import { Fragment } from "react"
 
 function CreateExperienceCard(title, place, time, description, img, skills = []) {
@@ -31,4 +32,33 @@ export var CreditsList = [
     <a target="_blank" href="https://www.flaticon.com/free-icons/github" title="github icons">Github icons</a>,
     <a target="_blank" href="https://www.flaticon.com/free-icons/hamburger" title="hamburger icons">Hamburger icons</a>,
     <a target="_blank" href="https://www.flaticon.com/free-icons/close" title="close icons">Close icons</a>
+]
+
+function CreateEducationItem(name, year, activities, courses, bg) {
+    return { name, year, activities, courses, bg };
+}
+
+export var Educations = [
+    CreateEducationItem(
+        "University of Indonesia",
+        "2016 - 2020",
+        ["Robotic Team"],
+        [
+            "Data Structures and Algorithms",
+            "Web Design & Programming",
+            "Operating Systems",
+            "Game Development",
+            "Image Processing",
+            "Systems Programming",
+            "Intelligent Systems",
+            "Computer Networks",
+            "Natural Language Processing",
+            "Machine Learning",
+            "Data Science & Analytics",
+            "Functional Programming",
+            "Cryptography & Information Security",
+            "Web Services and Applications",
+        ],
+        UniversityOfIndonesiaImg
+    ),
 ]
