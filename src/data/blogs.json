@@ -1,5 +1,14 @@
 [
   {
+    "id": 5,
+    "title": "Refreshing My Memory on RabbitMQ: Event Routing with Topic Exchanges 🎯",
+    "thumbnail": "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*6oLvZ4mn6KNi8ZqvNdC7Kw.png",
+    "description": "We’ve all faced this architectural fork in the road: a request is placed, or data updates arrive, and downstream microservices need to react. Each microservice should only be sent data it corresponds to.",
+    "created_at": "2026-09-22",
+    "category": "Backend",
+    "url": "https://medium.com/@farolinar/refreshing-my-memory-on-rabbitmq-event-routing-with-topic-exchanges-51e985e6c0cc"
+  },
+  {
     "id": 4,
     "title": "Learn Nmap: Port Scanning 🔍",
     "thumbnail": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*fJoIejqWdae8hUlwNRqLow.png",
