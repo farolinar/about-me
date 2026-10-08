@@ -2,7 +2,7 @@ pipeline {
     agent { label 'docker' }        // run on our agent (label set in Phase 1)
 
     tools {
-        nodejs 'node20'             // provision the managed tool named "node20" (see Step 2)
+        nodejs 'node24'             // provision the managed tool named "node24" (see Step 2)
     }
 
     stages {
