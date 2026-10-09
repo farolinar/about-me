@@ -1,4 +1,3 @@
-import React from 'react';
 import './CodeWindow.css';
 
 const CodeWindow = ({ title = 'Untitled', children, className = '' }) => {

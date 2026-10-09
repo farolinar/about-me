@@ -11,14 +11,19 @@ function BlogCard({ data }) {
     }
   };
 
-  const defaultThumbnail = "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80";
+  const defaultThumbnail = 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80';
 
   return (
     <VaporwaveWindow
       title={data.category ? `// ${data.category}` : '// ARTICLE'}
       className="blog-card-window"
     >
-      <div className="blog-card-container" onClick={handleCardClick}>
+      <div className="blog-card-container" onClick={handleCardClick} role="button" tabIndex={0} onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          handleCardClick();
+        }
+      }}>
         <div className="blog-card-thumbnail-wrapper">
           <img
             src={imgError ? defaultThumbnail : (data.thumbnail || defaultThumbnail)}

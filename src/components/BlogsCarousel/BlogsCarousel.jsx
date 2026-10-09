@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
-import BlogCard from "../BlogCard/BlogCard";
-import "./BlogsCarousel.css";
+import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import BlogCard from '../BlogCard/BlogCard';
+import './BlogsCarousel.css';
 
 function BlogsCarousel({ blogs = [] }) {
   const navigate = useNavigate();
@@ -15,16 +15,12 @@ function BlogsCarousel({ blogs = [] }) {
 
   useEffect(() => {
     const updateCardsToShow = () => {
-      if (window.innerWidth <= 900) {
-        setCardsToShow(1);
-      } else {
-        setCardsToShow(3);
-      }
+      setCardsToShow(window.innerWidth <= 900 ? 1 : 3);
     };
 
     updateCardsToShow();
-    window.addEventListener("resize", updateCardsToShow);
-    return () => window.removeEventListener("resize", updateCardsToShow);
+    window.addEventListener('resize', updateCardsToShow);
+    return () => window.removeEventListener('resize', updateCardsToShow);
   }, []);
 
   const maxIndex = Math.max(0, topBlogs.length - cardsToShow);
@@ -73,15 +69,13 @@ function BlogsCarousel({ blogs = [] }) {
     if (topBlogs.length <= cardsToShow) {
       setCardsToShow(topBlogs.length);
     }
-  }, [topBlogs.length]);
+  }, [cardsToShow, topBlogs.length]);
 
   return (
     <div className="blogs-carousel-container">
       <div className="blogs-carousel-controls">
         <button
-          className={`carousel-nav-btn prev ${
-            topBlogs.length <= cardsToShow ? "is-hidden" : ""
-          }`}
+          className={`carousel-nav-btn prev ${topBlogs.length <= cardsToShow ? 'is-hidden' : ''}`}
           onClick={handlePrev}
           aria-label="Previous Blog"
         >
@@ -113,9 +107,7 @@ function BlogsCarousel({ blogs = [] }) {
         </div>
 
         <button
-          className={`carousel-nav-btn next ${
-            topBlogs.length <= cardsToShow ? "is-hidden" : ""
-          }`}
+          className={`carousel-nav-btn next ${topBlogs.length <= cardsToShow ? 'is-hidden' : ''}`}
           onClick={handleNext}
           aria-label="Next Blog"
         >
@@ -128,7 +120,7 @@ function BlogsCarousel({ blogs = [] }) {
           {Array.from({ length: totalDots }).map((_, index) => (
             <button
               key={`dot-${index}`}
-              className={`carousel-dot ${activeIndex === index ? "active" : ""}`}
+              className={`carousel-dot ${activeIndex === index ? 'active' : ''}`}
               onClick={() => setActiveIndex(index)}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -137,7 +129,7 @@ function BlogsCarousel({ blogs = [] }) {
       )}
 
       <div className="see-more-wrapper">
-        <button className="see-more-btn" onClick={() => navigate("/blogs")}>
+        <button className="see-more-btn" onClick={() => navigate('/blogs')}>
           <span>See More Blogs →</span>
         </button>
       </div>
